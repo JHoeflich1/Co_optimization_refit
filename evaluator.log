@@ -1,0 +1,1083 @@
+/projects/juho8819/software/anaconda/envs/co-optimization-py3.10/lib/python3.11/site-packages/forcebalance/molecule.py:20: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import parse_version
+/projects/juho8819/software/anaconda/envs/co-optimization-py3.10/lib/python3.11/site-packages/forcebalance/molecule.py:20: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import parse_version
+#======================================================================#
+#| [1m            Welcome to ForceBalance version 1.9.6! =D             [0m |#
+#| [1m                 Force Field Optimization System                  [0m |#
+#| [1m                                                                  [0m |#
+#| [1m                             Authors:                             [0m |#
+#| [1m                          Lee-Ping Wang                           [0m |#
+#| [1m                  Yudong Qiu, Keri A. McKiernan                   [0m |#
+#| [1m          Jeffrey R. Wagner, Hyesu Jang, Simon Boothroyd          [0m |#
+#| [1m          Arthur Vigil, Erik G. Brandt, John Stoppelman           [0m |#
+#| [1m                  Johnny Israeli, Matt Thompson                   [0m |#
+#======================================================================#
+
+                          [44m     [0m                                        
+                       [44m        [0m      [43m     [0m                              
+                    [44m        [0m   [44m  [0m    [43m         [0m                          
+                 [44m       [0m    [44m      [0m      [43m         [0m                       
+             [44m        [0m    [44m        [0m          [43m         [0m                    
+          [44m        [0m    [44m        [0m                 [43m        [0m                 
+       [44m        [0m    [44m       [0m                        [43m        [0m              
+    [44m        [0m   [44m        [0m                              [43m         [0m          
+   [44m      [0m   [44m        [0m               `.:+@@###@'          [43m         [0m       
+    [44m [0m    [44m        [0m          ,;'+###############.             [43m     [0m       
+      [44m        [0m         +################':`                    [43m [0m        
+      [44m     [0m              `.,,...####+.                                  
+                                ,#####      +##.               [44m   [0m   [44m   [0m
+ [43m    [0m                            #####      ######             [44m   [0m   [44m   [0m
+ [43m    [0m                ###'        ####'     :#####'             [44m   [0m   [44m   [0m
+ [43m    [0m                :####@      ####.    ,####'               [44m   [0m   [44m   [0m
+ [43m    [0m                 ######     ####    +###+                 [44m   [0m   [44m   [0m
+ [43m    [0m                  #####     ####   ###;                   [44m   [0m   [44m   [0m
+ [43m    [0m                   :##      ####  ++`                     [44m   [0m   [44m   [0m
+ [43m    [0m                            ####``..:;+##############+`   [44m   [0m   [44m   [0m
+ [43m    [0m             .,:;;'++##################################`  [44m   [0m   [44m   [0m
+ [43m    [0m    `############################++++''';;;;;;;;;;;'';    [44m   [0m   [44m   [0m
+ [43m    [0m      ,########':,.``       ####                          [44m   [0m   [44m   [0m
+ [43m    [0m                            ####                          [44m   [0m   [44m   [0m
+ [43m    [0m                            ####                          [44m   [0m   [44m   [0m
+ [43m    [0m                            ####                          [44m   [0m   [44m   [0m
+ [43m    [0m                            ####                          [44m   [0m   [44m   [0m
+ [43m    [0m                            ####                          [44m   [0m   [44m   [0m
+ [43m    [0m                            ####                          [44m   [0m   [44m   [0m
+ [43m    [0m                            ####                          [44m   [0m   [44m   [0m
+      [44m    [0m                       ####                                   
+     [44m        [0m                    ####                                   
+    [44m [0m    [44m       [0m                 ####                       [43m     [0m       
+   [44m     [0m    [44m        [0m             ####                    [43m        [0m       
+   [44m        [0m    [44m        [0m          ###                  [43m         [0m         
+      [44m        [0m    [44m        [0m        +`               [43m        [0m             
+          [44m        [0m   [44m        [0m                   [43m        [0m                
+             [44m        [0m   [44m         [0m           [43m         [0m                   
+                [44m        [0m    [44m       [0m      [43m         [0m                      
+                   [44m        [0m    [44m   [0m    [43m        [0m                          
+                      [44m        [0m       [43m      [0m                             
+                          [44m      [0m      [43m  [0m                                
+                             [44m  [0m                                         
+
+Reading options from file: optimize.in
+#========================================================#
+#| [95m  Options at their default values are not printed   [0m |#
+#| [95m        Use 'verbose_options True' to Enable        [0m |#
+#========================================================#
+Reading force field from file: force-field.offxml
+#=========================================================#
+#| [92m Starting parameter indices, physical values and IDs [0m |#
+#=========================================================#
+   0 [  4.3462e+02 ] : Bonds/Bond/k/[#6X4:1]-[#6X4:2]
+   1 [  1.5334e+00 ] : Bonds/Bond/length/[#6X4:1]-[#6X4:2]
+   2 [  4.8146e+02 ] : Bonds/Bond/k/[#6X4:1]-[#6X3:2]
+   3 [  1.5085e+00 ] : Bonds/Bond/length/[#6X4:1]-[#6X3:2]
+   4 [  3.6252e+02 ] : Bonds/Bond/k/[#6X4:1]-[#6X3:2]=[#8X1+0]
+   5 [  1.5443e+00 ] : Bonds/Bond/length/[#6X4:1]-[#6X3:2]=[#8X1+0]
+   6 [  5.1622e+02 ] : Bonds/Bond/k/[#6X3:1]-[#6X3:2]
+   7 [  1.4719e+00 ] : Bonds/Bond/length/[#6X3:1]-[#6X3:2]
+   8 [  7.4578e+02 ] : Bonds/Bond/k/[#6X3:1]:[#6X3:2]
+   9 [  1.4027e+00 ] : Bonds/Bond/length/[#6X3:1]:[#6X3:2]
+  10 [  8.7522e+02 ] : Bonds/Bond/k/[#6X3:1]=[#6X3:2]
+  11 [  1.3786e+00 ] : Bonds/Bond/length/[#6X3:1]=[#6X3:2]
+  12 [  4.1462e+02 ] : Bonds/Bond/k/[#6:1]-[#7:2]
+  13 [  1.4918e+00 ] : Bonds/Bond/length/[#6:1]-[#7:2]
+  14 [  6.7403e+02 ] : Bonds/Bond/k/[#6X3:1]-[#7X3:2]
+  15 [  1.3865e+00 ] : Bonds/Bond/length/[#6X3:1]-[#7X3:2]
+  16 [  4.7634e+02 ] : Bonds/Bond/k/[#6X4:1]-[#7X3:2]-[#6X3]=[#8X1+0]
+  17 [  1.4648e+00 ] : Bonds/Bond/length/[#6X4:1]-[#7X3:2]-[#6X3]=[#8X1+0]
+  18 [  6.7853e+02 ] : Bonds/Bond/k/[#6X3:1](=[#8X1+0])-[#7X3:2]
+  19 [  1.3800e+00 ] : Bonds/Bond/length/[#6X3:1](=[#8X1+0])-[#7X3:2]
+  20 [  5.9144e+02 ] : Bonds/Bond/k/[#6X3:1]-[#7X2:2]
+  21 [  1.3832e+00 ] : Bonds/Bond/length/[#6X3:1]-[#7X2:2]
+  22 [  7.7507e+02 ] : Bonds/Bond/k/[#6X3:1]:[#7X2,#7X3+1:2]
+  23 [  1.3394e+00 ] : Bonds/Bond/length/[#6X3:1]:[#7X2,#7X3+1:2]
+  24 [  9.5412e+02 ] : Bonds/Bond/k/[#6X3:1]=[#7X2,#7X3+1:2]
+  25 [  1.3169e+00 ] : Bonds/Bond/length/[#6X3:1]=[#7X2,#7X3+1:2]
+  26 [  5.2635e+02 ] : Bonds/Bond/k/[#6:1]-[#8:2]
+  27 [  1.4252e+00 ] : Bonds/Bond/length/[#6:1]-[#8:2]
+  28 [  1.2259e+03 ] : Bonds/Bond/k/[#6X3:1]-[#8X1-1:2]
+  29 [  1.2591e+00 ] : Bonds/Bond/length/[#6X3:1]-[#8X1-1:2]
+  30 [  4.6414e+02 ] : Bonds/Bond/k/[#6X4:1]-[#8X2H0:2]
+  31 [  1.4340e+00 ] : Bonds/Bond/length/[#6X4:1]-[#8X2H0:2]
+  32 [  5.6268e+02 ] : Bonds/Bond/k/[#6X3:1]-[#8X2:2]
+  33 [  1.3669e+00 ] : Bonds/Bond/length/[#6X3:1]-[#8X2:2]
+  34 [  6.8560e+02 ] : Bonds/Bond/k/[#6X3:1]-[#8X2H1:2]
+  35 [  1.3725e+00 ] : Bonds/Bond/length/[#6X3:1]-[#8X2H1:2]
+  36 [  6.2476e+02 ] : Bonds/Bond/k/[#6X3a:1]-[#8X2H0:2]
+  37 [  1.3763e+00 ] : Bonds/Bond/length/[#6X3a:1]-[#8X2H0:2]
+  38 [  5.3028e+02 ] : Bonds/Bond/k/[#6X3:1](=[#8X1])-[#8X2H0:2]
+  39 [  1.3657e+00 ] : Bonds/Bond/length/[#6X3:1](=[#8X1])-[#8X2H0:2]
+  40 [  1.4551e+03 ] : Bonds/Bond/k/[#6:1]=[#8X1+0,#8X2+1:2]
+  41 [  1.2318e+00 ] : Bonds/Bond/length/[#6:1]=[#8X1+0,#8X2+1:2]
+  42 [  1.1804e+03 ] : Bonds/Bond/k/[#6X3:1](~[#8X1])~[#8X1:2]
+  43 [  1.2601e+00 ] : Bonds/Bond/length/[#6X3:1](~[#8X1])~[#8X1:2]
+  44 [  6.5393e+02 ] : Bonds/Bond/k/[#6X2:1]-[#6:2]
+  45 [  1.4322e+00 ] : Bonds/Bond/length/[#6X2:1]-[#6:2]
+  46 [  2.6676e+03 ] : Bonds/Bond/k/[#6:1]#[#7:2]
+  47 [  1.1659e+00 ] : Bonds/Bond/length/[#6:1]#[#7:2]
+  48 [  5.4947e+02 ] : Bonds/Bond/k/[#7X3:1]-[#7X2:2]
+  49 [  1.3674e+00 ] : Bonds/Bond/length/[#7X3:1]-[#7X2:2]
+  50 [  5.2331e+02 ] : Bonds/Bond/k/[#7X2:1]-[#7X2:2]
+  51 [  1.3525e+00 ] : Bonds/Bond/length/[#7X2:1]-[#7X2:2]
+  52 [  8.3461e+02 ] : Bonds/Bond/k/[#7:1]=[#7:2]
+  53 [  1.3026e+00 ] : Bonds/Bond/length/[#7:1]=[#7:2]
+  54 [  2.8552e+02 ] : Bonds/Bond/k/[#16X2,#16X1-1,#16X3+1:1]-[#6X4:2]
+  55 [  1.8371e+00 ] : Bonds/Bond/length/[#16X2,#16X1-1,#16X3+1:1]-[#6X4:2]
+  56 [  3.6215e+02 ] : Bonds/Bond/k/[#16X2,#16X1-1,#16X3+1:1]-[#6X3:2]
+  57 [  1.7484e+00 ] : Bonds/Bond/length/[#16X2,#16X1-1,#16X3+1:1]-[#6X3:2]
+  58 [  3.0941e+02 ] : Bonds/Bond/k/[#16X4,#16X3!+1:1]-[#6:2]
+  59 [  1.8077e+00 ] : Bonds/Bond/length/[#16X4,#16X3!+1:1]-[#6:2]
+  60 [  3.5866e+02 ] : Bonds/Bond/k/[#16X4,#16X3:1]~[#7:2]
+  61 [  1.7107e+00 ] : Bonds/Bond/length/[#16X4,#16X3:1]~[#7:2]
+  62 [  1.1590e+03 ] : Bonds/Bond/k/[#16X4,#16X3:1]~[#8X1:2]
+  63 [  1.4782e+00 ] : Bonds/Bond/length/[#16X4,#16X3:1]~[#8X1:2]
+  64 [  7.0556e+02 ] : Bonds/Bond/k/[#6:1]-[#9:2]
+  65 [  1.3549e+00 ] : Bonds/Bond/length/[#6:1]-[#9:2]
+  66 [  5.7182e+02 ] : Bonds/Bond/k/[#6X4:1]-[#9:2]
+  67 [  1.3657e+00 ] : Bonds/Bond/length/[#6X4:1]-[#9:2]
+  68 [  3.4170e+02 ] : Bonds/Bond/k/[#6:1]-[#17:2]
+  69 [  1.7582e+00 ] : Bonds/Bond/length/[#6:1]-[#17:2]
+  70 [  2.9056e+02 ] : Bonds/Bond/k/[#6:1]-[#35:2]
+  71 [  1.9178e+00 ] : Bonds/Bond/length/[#6:1]-[#35:2]
+  72 [  7.1357e+02 ] : Bonds/Bond/k/[#6X4:1]-[#1:2]
+  73 [  1.0945e+00 ] : Bonds/Bond/length/[#6X4:1]-[#1:2]
+  74 [  7.6835e+02 ] : Bonds/Bond/k/[#6X3:1]-[#1:2]
+  75 [  1.0864e+00 ] : Bonds/Bond/length/[#6X3:1]-[#1:2]
+  76 [  9.4492e+02 ] : Bonds/Bond/k/[#7:1]-[#1:2]
+  77 [  1.0215e+00 ] : Bonds/Bond/length/[#7:1]-[#1:2]
+  78 [  1.0800e+03 ] : Bonds/Bond/k/[#8:1]-[#1:2]
+  79 [  9.7434e-01 ] : Bonds/Bond/length/[#8:1]-[#1:2]
+  80 [  1.0991e+02 ] : Angles/Angle/angle/[*:1]~[#6X4:2]-[*:3]
+  81 [  1.3494e+02 ] : Angles/Angle/k/[*:1]~[#6X4:2]-[*:3]
+  82 [  1.0826e+02 ] : Angles/Angle/angle/[#1:1]-[#6X4:2]-[#1:3]
+  83 [  7.3448e+01 ] : Angles/Angle/k/[#1:1]-[#6X4:2]-[#1:3]
+  84 [  1.1775e+02 ] : Angles/Angle/angle/[*;r3:1]~;@[*;r3:2]~;!@[*:3]
+  85 [  1.1567e+02 ] : Angles/Angle/k/[*;r3:1]~;@[*;r3:2]~;!@[*:3]
+  86 [  1.1582e+02 ] : Angles/Angle/angle/[*:1]~;!@[*;r3:2]~;!@[*:3]
+  87 [  1.5030e+02 ] : Angles/Angle/k/[*:1]~;!@[*;r3:2]~;!@[*:3]
+  88 [  1.1482e+02 ] : Angles/Angle/angle/[#1:1]-[*;r3:2]~;!@[*:3]
+  89 [  5.5799e+01 ] : Angles/Angle/k/[#1:1]-[*;r3:2]~;!@[*:3]
+  90 [  8.8371e+01 ] : Angles/Angle/angle/[#6r4:1]-;@[#6r4:2]-;@[#6r4:3]
+  91 [  1.6078e+02 ] : Angles/Angle/k/[#6r4:1]-;@[#6r4:2]-;@[#6r4:3]
+  92 [  1.1619e+02 ] : Angles/Angle/angle/[!#1:1]-[#6r4:2]-;!@[!#1:3]
+  93 [  2.2078e+02 ] : Angles/Angle/k/[!#1:1]-[#6r4:2]-;!@[!#1:3]
+  94 [  1.1338e+02 ] : Angles/Angle/angle/[!#1:1]-[#6r4:2]-;!@[#1:3]
+  95 [  1.1602e+02 ] : Angles/Angle/k/[!#1:1]-[#6r4:2]-;!@[#1:3]
+  96 [  1.2000e+02 ] : Angles/Angle/angle/[*:1]~[#6X3:2]~[*:3]
+  97 [  1.6621e+02 ] : Angles/Angle/k/[*:1]~[#6X3:2]~[*:3]
+  98 [  1.1982e+02 ] : Angles/Angle/angle/[#1:1]-[#6X3:2]~[*:3]
+  99 [  6.5698e+01 ] : Angles/Angle/k/[#1:1]-[#6X3:2]~[*:3]
+ 100 [  1.3064e+02 ] : Angles/Angle/angle/[*;r6:1]~;@[*;r5:2]~;@[*;r5;x2:3]
+ 101 [  1.5542e+02 ] : Angles/Angle/k/[*;r6:1]~;@[*;r5:2]~;@[*;r5;x2:3]
+ 102 [  1.2510e+02 ] : Angles/Angle/angle/[*:1]~;!@[*;X3;r5:2]~;@[*;r5:3]
+ 103 [  1.0660e+02 ] : Angles/Angle/k/[*:1]~;!@[*;X3;r5:2]~;@[*;r5:3]
+ 104 [  1.2812e+02 ] : Angles/Angle/angle/[#8X1:1]~[#6X3:2]~[#8:3]
+ 105 [  1.1522e+02 ] : Angles/Angle/k/[#8X1:1]~[#6X3:2]~[#8:3]
+ 106 [  1.0553e+02 ] : Angles/Angle/k/[*:1]~[#6X2:2]~[*:3]
+ 107 [  1.1260e+02 ] : Angles/Angle/angle/[*:1]~[#7X4,#7X3,#7X2-1:2]~[*:3]
+ 108 [  2.7819e+02 ] : Angles/Angle/k/[*:1]~[#7X4,#7X3,#7X2-1:2]~[*:3]
+ 109 [  9.7872e+01 ] : Angles/Angle/angle/[*:1]@-[r!r6;#7X4,#7X3,#7X2-1:2]@-[*:3]
+ 110 [  2.1002e+02 ] : Angles/Angle/k/[*:1]@-[r!r6;#7X4,#7X3,#7X2-1:2]@-[*:3]
+ 111 [  1.0874e+02 ] : Angles/Angle/angle/[#1:1]-[#7X4,#7X3,#7X2-1:2]-[*:3]
+ 112 [  1.0476e+02 ] : Angles/Angle/k/[#1:1]-[#7X4,#7X3,#7X2-1:2]-[*:3]
+ 113 [  1.2036e+02 ] : Angles/Angle/angle/[*:1]~[#7X3$(*~[#6X3,#6X2,#7X2+0]):2]~[*:3]
+ 114 [  1.6028e+02 ] : Angles/Angle/k/[*:1]~[#7X3$(*~[#6X3,#6X2,#7X2+0]):2]~[*:3]
+ 115 [  1.1892e+02 ] : Angles/Angle/angle/[#1:1]-[#7X3$(*~[#6X3,#6X2,#7X2+0]):2]-[*:3]
+ 116 [  7.0182e+01 ] : Angles/Angle/k/[#1:1]-[#7X3$(*~[#6X3,#6X2,#7X2+0]):2]-[*:3]
+ 117 [  1.1773e+02 ] : Angles/Angle/angle/[*:1]~[#7X2+0:2]~[*:3]
+ 118 [  2.9286e+02 ] : Angles/Angle/k/[*:1]~[#7X2+0:2]~[*:3]
+ 119 [  1.1484e+02 ] : Angles/Angle/angle/[*:1]-[#8:2]-[*:3]
+ 120 [  2.7636e+02 ] : Angles/Angle/k/[*:1]-[#8:2]-[*:3]
+ 121 [  1.0547e+02 ] : Angles/Angle/angle/[#6X3,#7:1]~;@[#8;r:2]~;@[#6X3,#7:3]
+ 122 [  3.1880e+02 ] : Angles/Angle/k/[#6X3,#7:1]~;@[#8;r:2]~;@[#6X3,#7:3]
+ 123 [  1.1908e+02 ] : Angles/Angle/angle/[*:1]~[#16X4:2]~[*:3]
+ 124 [  1.9805e+02 ] : Angles/Angle/k/[*:1]~[#16X4:2]~[*:3]
+ 125 [  1.0731e+02 ] : Angles/Angle/angle/[*:1]-[#16X4,#16X3+0:2]~[*:3]
+ 126 [  2.4187e+02 ] : Angles/Angle/k/[*:1]-[#16X4,#16X3+0:2]~[*:3]
+ 127 [  8.9690e+01 ] : Angles/Angle/angle/[#6X3:1]-[#16X2:2]-[#6X3:3]
+ 128 [  2.0523e+02 ] : Angles/Angle/k/[#6X3:1]-[#16X2:2]-[#6X3:3]
+ 129 [  1.0763e+02 ] : Angles/Angle/angle/[*;r5:1]1@[*;r5:2]@[*;r5:3]@[*;r5]@[*;r5]1
+ 130 [  1.8042e+02 ] : Angles/Angle/k/[*;r5:1]1@[*;r5:2]@[*;r5:3]@[*;r5]@[*;r5]1
+ 131 [  6.0000e+01 ] : Angles/Angle/angle/[*;r3:1]1~;@[*;r3:2]~;@[*;r3:3]1
+ 132 [  1.0989e+02 ] : Angles/Angle/k/[*;r3:1]1~;@[*;r3:2]~;@[*;r3:3]1
+ 133 [  1.4674e-01 ] : ProperTorsions/Proper/k1/[*:1]-[#6X4:2]-[#6X4:3]-[*:4]
+ 134 [  9.7472e-01 ] : ProperTorsions/Proper/k3/[#6X4:1]-[#6X4:2]-[#6X4:3]-[#6X4:4]
+ 135 [  4.2376e-01 ] : ProperTorsions/Proper/k1/[#6X4:1]-[#6X4:2]-[#6X4:3]-[#6X4:4]
+ 136 [  2.2036e-01 ] : ProperTorsions/Proper/k2/[#6X4:1]-[#6X4:2]-[#6X4:3]-[#6X4:4]
+ 137 [  2.3904e-01 ] : ProperTorsions/Proper/k1/[#1:1]-[#6X4:2]-[#6X4:3]-[#1:4]
+ 138 [  8.8744e-02 ] : ProperTorsions/Proper/k1/[#1:1]-[#6X4:2]-[#6X4:3]-[#6X4:4]
+ 139 [  2.1725e-01 ] : ProperTorsions/Proper/k1/[*:1]~[#6X3:2]-[#6X4:3]-[*:4]
+ 140 [ -4.5896e-01 ] : ProperTorsions/Proper/k1/[*:1]-[#6X4:2]-[#6X3:3]=[*:4]
+ 141 [  2.4276e-01 ] : ProperTorsions/Proper/k1/[#1:1]-[#6X4:2]-[#6X3:3]=[#6X3:4]
+ 142 [  1.8424e-01 ] : ProperTorsions/Proper/k2/[#1:1]-[#6X4:2]-[#6X3:3]=[#6X3:4]
+ 143 [  4.7023e+00 ] : ProperTorsions/Proper/k1/[*:1]-,:[#6X3:2]=[#6X3:3]-,:[*:4]
+ 144 [  3.1543e+00 ] : ProperTorsions/Proper/k1/[#6X4:1]-[#6X3:2]=[#6X3:3]-[#6X4:4]
+ 145 [ -4.1711e-01 ] : ProperTorsions/Proper/k2/[#6X4:1]-[#6X3:2]=[#6X3:3]-[#6X4:4]
+ 146 [  5.3001e+00 ] : ImproperTorsions/Improper/k1/[*:1]~[#6X3:2](~[*:3])~[*:4]
+ 147 [  1.3037e+01 ] : ImproperTorsions/Improper/k1/[*:1]~[#6X3:2](~[#8X1:3])~[#8:4]
+ 148 [  1.3645e+01 ] : ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*~[#15,#16](!-[*])):2](~[*:3])~[*:4]
+ 149 [  1.2794e+00 ] : ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*~[#6X3]):2](~[*:3])~[*:4]
+ 150 [ -2.2493e+00 ] : ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*~[#7X2]):2](~[*:3])~[*:4]
+ 151 [  1.5972e+01 ] : ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*@1-[*]=,:[*][*]=,:[*]@1):2](~[*:3])~[*:4]
+ 152 [  1.0030e+01 ] : ImproperTorsions/Improper/k1/[*:1]~[#6X3:2](=[#7X2,#7X3+1:3])~[#7:4]
+ 153 [  1.5779e-02 ] : vdW/Atom/epsilon/[#1:1]-[#6X4]
+ 154 [  1.4842e+00 ] : vdW/Atom/rmin_half/[#1:1]-[#6X4]
+ 155 [  1.5611e-02 ] : vdW/Atom/epsilon/[#1:1]-[#6X3]
+ 156 [  1.4438e+00 ] : vdW/Atom/rmin_half/[#1:1]-[#6X3]
+ 157 [  8.6879e-02 ] : vdW/Atom/epsilon/[#6:1]
+ 158 [  1.9534e+00 ] : vdW/Atom/rmin_half/[#6:1]
+ 159 [  1.0884e-01 ] : vdW/Atom/epsilon/[#6X4:1]
+ 160 [  1.8967e+00 ] : vdW/Atom/rmin_half/[#6X4:1]
+-----------------------------------------------------------
+#=========================================================#
+#| [91m Rescaling Factors by Type (Lower Takes Precedence): [0m |#
+#=========================================================#
+   ProperTorsions/Proper/k1             : 4.70232e+00
+   ProperTorsions/Proper/k3             : 9.74719e-01
+   ProperTorsions/Proper/k2             : 4.17114e-01
+   ImproperTorsions/Improper/k1         : 1.59721e+01
+   Angles/Angle/k                       : 1.00000e+02
+   Angles/Angle/angle                   : 5.00000e+00
+   Bonds/Bond/k                         : 1.00000e+02
+   Bonds/Bond/length                    : 1.00000e-01
+   ProperTorsions/Proper/k              : 5.00000e+01
+   ImproperTorsions/Improper/k          : 5.00000e+01
+   vdW/Atom/epsilon                     : 1.00000e+00
+   vdW/Atom/rmin_half                   : 1.00000e+01
+-----------------------------------------------------------
+#========================================================#
+#| [91m   Rescaling Types / Factors by Parameter Number:   [0m |#
+#========================================================#
+   0 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X4:1]-[#6X4:2]
+   1 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X4:1]-[#6X4:2]
+   2 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X4:1]-[#6X3:2]
+   3 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X4:1]-[#6X3:2]
+   4 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X4:1]-[#6X3:2]=[#8X1+0]
+   5 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X4:1]-[#6X3:2]=[#8X1+0]
+   6 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X3:1]-[#6X3:2]
+   7 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X3:1]-[#6X3:2]
+   8 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X3:1]:[#6X3:2]
+   9 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X3:1]:[#6X3:2]
+  10 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X3:1]=[#6X3:2]
+  11 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X3:1]=[#6X3:2]
+  12 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6:1]-[#7:2]
+  13 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6:1]-[#7:2]
+  14 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X3:1]-[#7X3:2]
+  15 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X3:1]-[#7X3:2]
+  16 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X4:1]-[#7X3:2]-[#6X3]=[#8X1+0]
+  17 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X4:1]-[#7X3:2]-[#6X3]=[#8X1+0]
+  18 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X3:1](=[#8X1+0])-[#7X3:2]
+  19 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X3:1](=[#8X1+0])-[#7X3:2]
+  20 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X3:1]-[#7X2:2]
+  21 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X3:1]-[#7X2:2]
+  22 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X3:1]:[#7X2,#7X3+1:2]
+  23 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X3:1]:[#7X2,#7X3+1:2]
+  24 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X3:1]=[#7X2,#7X3+1:2]
+  25 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X3:1]=[#7X2,#7X3+1:2]
+  26 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6:1]-[#8:2]
+  27 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6:1]-[#8:2]
+  28 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X3:1]-[#8X1-1:2]
+  29 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X3:1]-[#8X1-1:2]
+  30 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X4:1]-[#8X2H0:2]
+  31 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X4:1]-[#8X2H0:2]
+  32 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X3:1]-[#8X2:2]
+  33 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X3:1]-[#8X2:2]
+  34 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X3:1]-[#8X2H1:2]
+  35 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X3:1]-[#8X2H1:2]
+  36 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X3a:1]-[#8X2H0:2]
+  37 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X3a:1]-[#8X2H0:2]
+  38 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X3:1](=[#8X1])-[#8X2H0:2]
+  39 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X3:1](=[#8X1])-[#8X2H0:2]
+  40 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6:1]=[#8X1+0,#8X2+1:2]
+  41 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6:1]=[#8X1+0,#8X2+1:2]
+  42 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X3:1](~[#8X1])~[#8X1:2]
+  43 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X3:1](~[#8X1])~[#8X1:2]
+  44 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X2:1]-[#6:2]
+  45 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X2:1]-[#6:2]
+  46 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6:1]#[#7:2]
+  47 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6:1]#[#7:2]
+  48 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#7X3:1]-[#7X2:2]
+  49 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#7X3:1]-[#7X2:2]
+  50 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#7X2:1]-[#7X2:2]
+  51 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#7X2:1]-[#7X2:2]
+  52 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#7:1]=[#7:2]
+  53 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#7:1]=[#7:2]
+  54 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#16X2,#16X1-1,#16X3+1:1]-[#6X4:2]
+  55 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#16X2,#16X1-1,#16X3+1:1]-[#6X4:2]
+  56 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#16X2,#16X1-1,#16X3+1:1]-[#6X3:2]
+  57 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#16X2,#16X1-1,#16X3+1:1]-[#6X3:2]
+  58 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#16X4,#16X3!+1:1]-[#6:2]
+  59 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#16X4,#16X3!+1:1]-[#6:2]
+  60 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#16X4,#16X3:1]~[#7:2]
+  61 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#16X4,#16X3:1]~[#7:2]
+  62 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#16X4,#16X3:1]~[#8X1:2]
+  63 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#16X4,#16X3:1]~[#8X1:2]
+  64 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6:1]-[#9:2]
+  65 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6:1]-[#9:2]
+  66 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X4:1]-[#9:2]
+  67 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X4:1]-[#9:2]
+  68 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6:1]-[#17:2]
+  69 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6:1]-[#17:2]
+  70 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6:1]-[#35:2]
+  71 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6:1]-[#35:2]
+  72 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X4:1]-[#1:2]
+  73 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X4:1]-[#1:2]
+  74 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X3:1]-[#1:2]
+  75 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X3:1]-[#1:2]
+  76 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#7:1]-[#1:2]
+  77 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#7:1]-[#1:2]
+  78 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#8:1]-[#1:2]
+  79 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#8:1]-[#1:2]
+  80 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*:1]~[#6X4:2]-[*:3]
+  81 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*:1]~[#6X4:2]-[*:3]
+  82 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[#1:1]-[#6X4:2]-[#1:3]
+  83 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[#1:1]-[#6X4:2]-[#1:3]
+  84 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*;r3:1]~;@[*;r3:2]~;!@[*:3]
+  85 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*;r3:1]~;@[*;r3:2]~;!@[*:3]
+  86 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*:1]~;!@[*;r3:2]~;!@[*:3]
+  87 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*:1]~;!@[*;r3:2]~;!@[*:3]
+  88 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[#1:1]-[*;r3:2]~;!@[*:3]
+  89 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[#1:1]-[*;r3:2]~;!@[*:3]
+  90 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[#6r4:1]-;@[#6r4:2]-;@[#6r4:3]
+  91 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[#6r4:1]-;@[#6r4:2]-;@[#6r4:3]
+  92 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[!#1:1]-[#6r4:2]-;!@[!#1:3]
+  93 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[!#1:1]-[#6r4:2]-;!@[!#1:3]
+  94 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[!#1:1]-[#6r4:2]-;!@[#1:3]
+  95 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[!#1:1]-[#6r4:2]-;!@[#1:3]
+  96 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*:1]~[#6X3:2]~[*:3]
+  97 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*:1]~[#6X3:2]~[*:3]
+  98 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[#1:1]-[#6X3:2]~[*:3]
+  99 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[#1:1]-[#6X3:2]~[*:3]
+ 100 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*;r6:1]~;@[*;r5:2]~;@[*;r5;x2:3]
+ 101 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*;r6:1]~;@[*;r5:2]~;@[*;r5;x2:3]
+ 102 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*:1]~;!@[*;X3;r5:2]~;@[*;r5:3]
+ 103 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*:1]~;!@[*;X3;r5:2]~;@[*;r5:3]
+ 104 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[#8X1:1]~[#6X3:2]~[#8:3]
+ 105 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[#8X1:1]~[#6X3:2]~[#8:3]
+ 106 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*:1]~[#6X2:2]~[*:3]
+ 107 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*:1]~[#7X4,#7X3,#7X2-1:2]~[*:3]
+ 108 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*:1]~[#7X4,#7X3,#7X2-1:2]~[*:3]
+ 109 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*:1]@-[r!r6;#7X4,#7X3,#7X2-1:2]@-[*:3]
+ 110 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*:1]@-[r!r6;#7X4,#7X3,#7X2-1:2]@-[*:3]
+ 111 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[#1:1]-[#7X4,#7X3,#7X2-1:2]-[*:3]
+ 112 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[#1:1]-[#7X4,#7X3,#7X2-1:2]-[*:3]
+ 113 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*:1]~[#7X3$(*~[#6X3,#6X2,#7X2+0]):2]~[*:3]
+ 114 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*:1]~[#7X3$(*~[#6X3,#6X2,#7X2+0]):2]~[*:3]
+ 115 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[#1:1]-[#7X3$(*~[#6X3,#6X2,#7X2+0]):2]-[*:3]
+ 116 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[#1:1]-[#7X3$(*~[#6X3,#6X2,#7X2+0]):2]-[*:3]
+ 117 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*:1]~[#7X2+0:2]~[*:3]
+ 118 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*:1]~[#7X2+0:2]~[*:3]
+ 119 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*:1]-[#8:2]-[*:3]
+ 120 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*:1]-[#8:2]-[*:3]
+ 121 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[#6X3,#7:1]~;@[#8;r:2]~;@[#6X3,#7:3]
+ 122 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[#6X3,#7:1]~;@[#8;r:2]~;@[#6X3,#7:3]
+ 123 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*:1]~[#16X4:2]~[*:3]
+ 124 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*:1]~[#16X4:2]~[*:3]
+ 125 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*:1]-[#16X4,#16X3+0:2]~[*:3]
+ 126 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*:1]-[#16X4,#16X3+0:2]~[*:3]
+ 127 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[#6X3:1]-[#16X2:2]-[#6X3:3]
+ 128 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[#6X3:1]-[#16X2:2]-[#6X3:3]
+ 129 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*;r5:1]1@[*;r5:2]@[*;r5:3]@[*;r5]@[*;r5]1
+ 130 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*;r5:1]1@[*;r5:2]@[*;r5:3]@[*;r5]@[*;r5]1
+ 131 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*;r3:1]1~;@[*;r3:2]~;@[*;r3:3]1
+ 132 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*;r3:1]1~;@[*;r3:2]~;@[*;r3:3]1
+ 133 [    ProperTorsions/Proper/k       : 5.00000e+01 ] : ProperTorsions/Proper/k1/[*:1]-[#6X4:2]-[#6X4:3]-[*:4]
+ 134 [    ProperTorsions/Proper/k       : 5.00000e+01 ] : ProperTorsions/Proper/k3/[#6X4:1]-[#6X4:2]-[#6X4:3]-[#6X4:4]
+ 135 [    ProperTorsions/Proper/k       : 5.00000e+01 ] : ProperTorsions/Proper/k1/[#6X4:1]-[#6X4:2]-[#6X4:3]-[#6X4:4]
+ 136 [    ProperTorsions/Proper/k       : 5.00000e+01 ] : ProperTorsions/Proper/k2/[#6X4:1]-[#6X4:2]-[#6X4:3]-[#6X4:4]
+ 137 [    ProperTorsions/Proper/k       : 5.00000e+01 ] : ProperTorsions/Proper/k1/[#1:1]-[#6X4:2]-[#6X4:3]-[#1:4]
+ 138 [    ProperTorsions/Proper/k       : 5.00000e+01 ] : ProperTorsions/Proper/k1/[#1:1]-[#6X4:2]-[#6X4:3]-[#6X4:4]
+ 139 [    ProperTorsions/Proper/k       : 5.00000e+01 ] : ProperTorsions/Proper/k1/[*:1]~[#6X3:2]-[#6X4:3]-[*:4]
+ 140 [    ProperTorsions/Proper/k       : 5.00000e+01 ] : ProperTorsions/Proper/k1/[*:1]-[#6X4:2]-[#6X3:3]=[*:4]
+ 141 [    ProperTorsions/Proper/k       : 5.00000e+01 ] : ProperTorsions/Proper/k1/[#1:1]-[#6X4:2]-[#6X3:3]=[#6X3:4]
+ 142 [    ProperTorsions/Proper/k       : 5.00000e+01 ] : ProperTorsions/Proper/k2/[#1:1]-[#6X4:2]-[#6X3:3]=[#6X3:4]
+ 143 [    ProperTorsions/Proper/k       : 5.00000e+01 ] : ProperTorsions/Proper/k1/[*:1]-,:[#6X3:2]=[#6X3:3]-,:[*:4]
+ 144 [    ProperTorsions/Proper/k       : 5.00000e+01 ] : ProperTorsions/Proper/k1/[#6X4:1]-[#6X3:2]=[#6X3:3]-[#6X4:4]
+ 145 [    ProperTorsions/Proper/k       : 5.00000e+01 ] : ProperTorsions/Proper/k2/[#6X4:1]-[#6X3:2]=[#6X3:3]-[#6X4:4]
+ 146 [    ImproperTorsions/Improper/k   : 5.00000e+01 ] : ImproperTorsions/Improper/k1/[*:1]~[#6X3:2](~[*:3])~[*:4]
+ 147 [    ImproperTorsions/Improper/k   : 5.00000e+01 ] : ImproperTorsions/Improper/k1/[*:1]~[#6X3:2](~[#8X1:3])~[#8:4]
+ 148 [    ImproperTorsions/Improper/k   : 5.00000e+01 ] : ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*~[#15,#16](!-[*])):2](~[*:3])~[*:4]
+ 149 [    ImproperTorsions/Improper/k   : 5.00000e+01 ] : ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*~[#6X3]):2](~[*:3])~[*:4]
+ 150 [    ImproperTorsions/Improper/k   : 5.00000e+01 ] : ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*~[#7X2]):2](~[*:3])~[*:4]
+ 151 [    ImproperTorsions/Improper/k   : 5.00000e+01 ] : ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*@1-[*]=,:[*][*]=,:[*]@1):2](~[*:3])~[*:4]
+ 152 [    ImproperTorsions/Improper/k   : 5.00000e+01 ] : ImproperTorsions/Improper/k1/[*:1]~[#6X3:2](=[#7X2,#7X3+1:3])~[#7:4]
+ 153 [    vdW/Atom/epsilon              : 1.00000e+00 ] : vdW/Atom/epsilon/[#1:1]-[#6X4]
+ 154 [    vdW/Atom/rmin_half            : 1.00000e+01 ] : vdW/Atom/rmin_half/[#1:1]-[#6X4]
+ 155 [    vdW/Atom/epsilon              : 1.00000e+00 ] : vdW/Atom/epsilon/[#1:1]-[#6X3]
+ 156 [    vdW/Atom/rmin_half            : 1.00000e+01 ] : vdW/Atom/rmin_half/[#1:1]-[#6X3]
+ 157 [    vdW/Atom/epsilon              : 1.00000e+00 ] : vdW/Atom/epsilon/[#6:1]
+ 158 [    vdW/Atom/rmin_half            : 1.00000e+01 ] : vdW/Atom/rmin_half/[#6:1]
+ 159 [    vdW/Atom/epsilon              : 1.00000e+00 ] : vdW/Atom/epsilon/[#6X4:1]
+ 160 [    vdW/Atom/rmin_half            : 1.00000e+01 ] : vdW/Atom/rmin_half/[#6X4:1]
+----------------------------------------------------------
+#========================================================#
+#| [92m               Setup for force field                [0m |#
+#========================================================#
+fnms                      ['force-field.offxml'] 
+priors                    OrderedDict([('Angles/Angle/k', 100.0), ('Angles/Angle/angle', 5.0), ('Bonds/Bond/k', 100.0), ('Bonds/Bond/length', 0.1), ('ProperTorsions/Proper/k', 50.0), ('ImproperTorsions/Improper/k', 50.0), ('vdW/Atom/epsilon', 1.0), ('vdW/Atom/rmin_half', 10.0)]) 
+----------------------------------------------------------
+targets/pure_data/options.json
+#========================================================#
+#| [92m             Loaded experimental data.              [0m |#
+#========================================================#
+#========================================================#
+#| [92m      Reference C=CCCCC{solv}{x=1.000000} data      [0m |#
+#========================================================#
+Density 298.15 kelvin-1.0 standard_atmosphere 668.4499999999999 kilogram / meter ** 3+/-0.0 kilogram / meter ** 3 
+EnthalpyOfVaporization 298.15 kelvin-1.0 standard_atmosphere 30.6 kilojoule / mole+/-0.0 kilojoule / mole 
+----------------------------------------------------------
+#========================================================#
+#| [92m   Reference CC(C)C1CCCCC1{solv}{x=1.000000} data   [0m |#
+#========================================================#
+Density 298.15 kelvin-100.0 kilopascal 798.2400000000001 kilogram / meter ** 3+/-0.485 kilogram / meter ** 3 
+----------------------------------------------------------
+#========================================================#
+#| [92m     Reference CCCCCCCC{solv}{x=1.000000} data      [0m |#
+#========================================================#
+Density 298.15 kelvin-1.0 standard_atmosphere 698.5999999999999 kilogram / meter ** 3+/-0.09999999999999999 kilogram / meter ** 3 
+Density 298.15 kelvin-101.325 kilopascal 698.7500000000001 kilogram / meter ** 3+/-9.999999999999998 kilogram / meter ** 3 
+EnthalpyOfVaporization 298.15 kelvin-1.0 standard_atmosphere 41.5 kilojoule / mole+/-0.05 kilojoule / mole 
+----------------------------------------------------------
+#========================================================#
+#| [92m   Reference CC/C=C\CCOC=O{solv}{x=1.000000} data   [0m |#
+#========================================================#
+Density 298.15 kelvin-101.325 kilopascal 908.1300000000001 kilogram / meter ** 3+/-1.525 kilogram / meter ** 3 
+----------------------------------------------------------
+#========================================================#
+#| [92m       Reference CCCCC{solv}{x=1.000000} data       [0m |#
+#========================================================#
+Density 298.15 kelvin-1.0 standard_atmosphere 620.9999999999999 kilogram / meter ** 3+/-0.0 kilogram / meter ** 3 
+EnthalpyOfVaporization 298.15 kelvin-1.0 standard_atmosphere 26.5 kilojoule / mole+/-0.6 kilojoule / mole 
+----------------------------------------------------------
+#============================================================================#
+#| [92m Reference C=C1CC/C=C(\C)CC[C@@H]2[C@@H]1CC2(C)C{solv}{x=1.000000} data [0m |#
+#============================================================================#
+Density 298.15 kelvin-101.325 kilopascal 896.8000000000001 kilogram / meter ** 3+/-0.9999999999999999 kilogram / meter ** 3 
+------------------------------------------------------------------------------
+#========================================================#
+#| [92m  Reference CC(C)CC(C)(C)C{solv}{x=1.000000} data   [0m |#
+#========================================================#
+Density 298.15 kelvin-101.0 kilopascal 686.3000000000001 kilogram / meter ** 3+/-3.1799999999999997 kilogram / meter ** 3 
+----------------------------------------------------------
+#========================================================#
+#| [92m   Reference C=C(C)C(=O)O{solv}{x=1.000000} data    [0m |#
+#========================================================#
+Density 298.15 kelvin-101.325 kilopascal 1009.5000000000003 kilogram / meter ** 3+/-1.0499999999999998 kilogram / meter ** 3 
+----------------------------------------------------------
+#========================================================#
+#| [92m  Reference CCCCCCCCCCCCCC{solv}{x=1.000000} data   [0m |#
+#========================================================#
+Density 298.15 kelvin-1.0 standard_atmosphere 759.0999999999999 kilogram / meter ** 3+/-0.0 kilogram / meter ** 3 
+EnthalpyOfVaporization 298.15 kelvin-1.0 standard_atmosphere 71.6 kilojoule / mole+/-0.6 kilojoule / mole 
+----------------------------------------------------------
+#========================================================#
+#| [92m    Reference CCCCCCCCCC{solv}{x=1.000000} data     [0m |#
+#========================================================#
+Density 298.15 kelvin-1.0 standard_atmosphere 725.9999999999999 kilogram / meter ** 3+/-0.09999999999999999 kilogram / meter ** 3 
+EnthalpyOfVaporization 298.15 kelvin-1.0 standard_atmosphere 51.3 kilojoule / mole+/-0.3 kilojoule / mole 
+----------------------------------------------------------
+#========================================================#
+#| [92m    Reference CCCCCCCCCCC{solv}{x=1.000000} data    [0m |#
+#========================================================#
+Density 298.15 kelvin-1.0 standard_atmosphere 735.6999999999999 kilogram / meter ** 3+/-0.27999999999999997 kilogram / meter ** 3 
+EnthalpyOfVaporization 298.15 kelvin-1.0 standard_atmosphere 56.6 kilojoule / mole+/-0.0 kilojoule / mole 
+----------------------------------------------------------
+#========================================================#
+#| [92m      Reference C1CCCC1{solv}{x=1.000000} data      [0m |#
+#========================================================#
+Density 298.15 kelvin-101.325 kilopascal 737.8000000000001 kilogram / meter ** 3+/-0.7999999999999999 kilogram / meter ** 3 
+----------------------------------------------------------
+#========================================================#
+#| [92m      Reference CCCCCCC{solv}{x=1.000000} data      [0m |#
+#========================================================#
+Density 298.15 kelvin-1.0 standard_atmosphere 679.5999999999999 kilogram / meter ** 3+/-0.09999999999999999 kilogram / meter ** 3 
+EnthalpyOfVaporization 298.15 kelvin-1.0 standard_atmosphere 36.0 kilojoule / mole+/-3.0 kilojoule / mole 
+----------------------------------------------------------
+#========================================================#
+#| [92m     Reference C=CCCCCCC{solv}{x=1.000000} data     [0m |#
+#========================================================#
+EnthalpyOfVaporization 298.15 kelvin-1.0 standard_atmosphere 40.65 kilojoule / mole+/-0.3 kilojoule / mole 
+----------------------------------------------------------
+#===============================================================#
+#| [92m Reference CC12CC3CC(C1)CC(C)(C3)C2{solv}{x=1.000000} data [0m |#
+#===============================================================#
+Density 298.15 kelvin-100.0 kilopascal 898.0000000000001 kilogram / meter ** 3+/-0.26999999999999996 kilogram / meter ** 3 
+-----------------------------------------------------------------
+#========================================================#
+#| [92m     Reference CCCCCCCCC{solv}{x=1.000000} data     [0m |#
+#========================================================#
+EnthalpyOfVaporization 298.15 kelvin-1.0 standard_atmosphere 46.6 kilojoule / mole+/-0.0 kilojoule / mole 
+----------------------------------------------------------
+#========================================================#
+#| [92m   Reference CCCCCCCCCCCCC{solv}{x=1.000000} data   [0m |#
+#========================================================#
+Density 298.15 kelvin-1.0 standard_atmosphere 756.41 kilogram / meter ** 3+/-0.19999999999999998 kilogram / meter ** 3 
+EnthalpyOfVaporization 298.15 kelvin-1.0 standard_atmosphere 66.57 kilojoule / mole+/-0.183 kilojoule / mole 
+----------------------------------------------------------
+#========================================================#
+#| [92m    Reference C=Cc1ccccc1{solv}{x=1.000000} data    [0m |#
+#========================================================#
+Density 298.15 kelvin-101.325 kilopascal 901.8600000000001 kilogram / meter ** 3+/-0.7249999999999999 kilogram / meter ** 3 
+----------------------------------------------------------
+#========================================================#
+#| [92m    Reference C=CC(=O)OC{solv}{x=1.000000} data     [0m |#
+#========================================================#
+Density 298.15 kelvin-101.325 kilopascal 947.5600000000001 kilogram / meter ** 3+/-0.44499999999999995 kilogram / meter ** 3 
+----------------------------------------------------------
+#========================================================#
+#| [92m   Reference CCCCCCCCCCCC{solv}{x=1.000000} data    [0m |#
+#========================================================#
+Density 298.15 kelvin-1.0 standard_atmosphere 745.3999999999999 kilogram / meter ** 3+/-0.16999999999999998 kilogram / meter ** 3 
+EnthalpyOfVaporization 298.15 kelvin-1.0 standard_atmosphere 61.3 kilojoule / mole+/-0.3 kilojoule / mole 
+----------------------------------------------------------
+#========================================================#
+#| [92m      Reference CCCCCC{solv}{x=1.000000} data       [0m |#
+#========================================================#
+Density 298.15 kelvin-1.0 standard_atmosphere 655.4999999999999 kilogram / meter ** 3+/-0.29999999999999993 kilogram / meter ** 3 
+EnthalpyOfVaporization 298.15 kelvin-1.0 standard_atmosphere 31.52 kilojoule / mole+/-0.028 kilojoule / mole 
+----------------------------------------------------------
+#========================================================#
+#| [92m            Setup for target pure_data :            [0m |#
+#========================================================#
+name                      pure_data 
+type                      EVALUATOR_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/pure_data 
+evaluator_input           options.json 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755354 :        [0m |#
+#========================================================#
+name                      torsion-137755354 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755354 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755381 :        [0m |#
+#========================================================#
+name                      torsion-137755381 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755381 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755466 :        [0m |#
+#========================================================#
+name                      torsion-137755466 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755466 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755341 :        [0m |#
+#========================================================#
+name                      torsion-137755341 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755341 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755355 :        [0m |#
+#========================================================#
+name                      torsion-137755355 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755355 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755382 :        [0m |#
+#========================================================#
+name                      torsion-137755382 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755382 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755468 :        [0m |#
+#========================================================#
+name                      torsion-137755468 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755468 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755342 :        [0m |#
+#========================================================#
+name                      torsion-137755342 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755342 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755357 :        [0m |#
+#========================================================#
+name                      torsion-137755357 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755357 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755383 :        [0m |#
+#========================================================#
+name                      torsion-137755383 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755383 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755479 :        [0m |#
+#========================================================#
+name                      torsion-137755479 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755479 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755343 :        [0m |#
+#========================================================#
+name                      torsion-137755343 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755343 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755360 :        [0m |#
+#========================================================#
+name                      torsion-137755360 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755360 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755425 :        [0m |#
+#========================================================#
+name                      torsion-137755425 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755425 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755480 :        [0m |#
+#========================================================#
+name                      torsion-137755480 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755480 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755344 :        [0m |#
+#========================================================#
+name                      torsion-137755344 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755344 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755361 :        [0m |#
+#========================================================#
+name                      torsion-137755361 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755361 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755443 :        [0m |#
+#========================================================#
+name                      torsion-137755443 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755443 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755489 :        [0m |#
+#========================================================#
+name                      torsion-137755489 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755489 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755349 :        [0m |#
+#========================================================#
+name                      torsion-137755349 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755349 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755364 :        [0m |#
+#========================================================#
+name                      torsion-137755364 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755364 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755454 :        [0m |#
+#========================================================#
+name                      torsion-137755454 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755454 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755490 :        [0m |#
+#========================================================#
+name                      torsion-137755490 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755490 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755351 :        [0m |#
+#========================================================#
+name                      torsion-137755351 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755351 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755365 :        [0m |#
+#========================================================#
+name                      torsion-137755365 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755365 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755464 :        [0m |#
+#========================================================#
+name                      torsion-137755464 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755464 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755491 :        [0m |#
+#========================================================#
+name                      torsion-137755491 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755491 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755352 :        [0m |#
+#========================================================#
+name                      torsion-137755352 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755352 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755366 :        [0m |#
+#========================================================#
+name                      torsion-137755366 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755366 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755465 :        [0m |#
+#========================================================#
+name                      torsion-137755465 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755465 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755493 :        [0m |#
+#========================================================#
+name                      torsion-137755493 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755493 
+----------------------------------------------------------
+#========================================================#
+#| [92m        SMIRNOFF Parameter Coverage Analysis        [0m |#
+#========================================================#
+Force field assignment data written to /gpfs/alpine1/scratch/juho8819/co-optimization/tmp/20264316/smirnoff_parameter_assignments.json
+ idx Parameter                                                                                                   Count
+----------------------------------------------------------------------------------------------------------------------
+   0 Bonds/Bond/k/[#6X4:1]-[#6X4:2]                                                                       :         80
+   1 Bonds/Bond/length/[#6X4:1]-[#6X4:2]                                                                  :         80
+   2 Bonds/Bond/k/[#6X4:1]-[#6X3:2]                                                                       :         35
+   3 Bonds/Bond/length/[#6X4:1]-[#6X3:2]                                                                  :         35
+   4 Bonds/Bond/k/[#6X4:1]-[#6X3:2]=[#8X1+0]                                                              :          0
+   5 Bonds/Bond/length/[#6X4:1]-[#6X3:2]=[#8X1+0]                                                         :          0
+   6 Bonds/Bond/k/[#6X3:1]-[#6X3:2]                                                                       :          0
+   7 Bonds/Bond/length/[#6X3:1]-[#6X3:2]                                                                  :          0
+   8 Bonds/Bond/k/[#6X3:1]:[#6X3:2]                                                                       :          0
+   9 Bonds/Bond/length/[#6X3:1]:[#6X3:2]                                                                  :          0
+  10 Bonds/Bond/k/[#6X3:1]=[#6X3:2]                                                                       :         21
+  11 Bonds/Bond/length/[#6X3:1]=[#6X3:2]                                                                  :         21
+  12 Bonds/Bond/k/[#6:1]-[#7:2]                                                                           :          0
+  13 Bonds/Bond/length/[#6:1]-[#7:2]                                                                      :          0
+  14 Bonds/Bond/k/[#6X3:1]-[#7X3:2]                                                                       :          0
+  15 Bonds/Bond/length/[#6X3:1]-[#7X3:2]                                                                  :          0
+  16 Bonds/Bond/k/[#6X4:1]-[#7X3:2]-[#6X3]=[#8X1+0]                                                       :          0
+  17 Bonds/Bond/length/[#6X4:1]-[#7X3:2]-[#6X3]=[#8X1+0]                                                  :          0
+  18 Bonds/Bond/k/[#6X3:1](=[#8X1+0])-[#7X3:2]                                                            :          0
+  19 Bonds/Bond/length/[#6X3:1](=[#8X1+0])-[#7X3:2]                                                       :          0
+  20 Bonds/Bond/k/[#6X3:1]-[#7X2:2]                                                                       :          0
+  21 Bonds/Bond/length/[#6X3:1]-[#7X2:2]                                                                  :          0
+  22 Bonds/Bond/k/[#6X3:1]:[#7X2,#7X3+1:2]                                                                :          0
+  23 Bonds/Bond/length/[#6X3:1]:[#7X2,#7X3+1:2]                                                           :          0
+  24 Bonds/Bond/k/[#6X3:1]=[#7X2,#7X3+1:2]                                                                :          0
+  25 Bonds/Bond/length/[#6X3:1]=[#7X2,#7X3+1:2]                                                           :          0
+  26 Bonds/Bond/k/[#6:1]-[#8:2]                                                                           :          0
+  27 Bonds/Bond/length/[#6:1]-[#8:2]                                                                      :          0
+  28 Bonds/Bond/k/[#6X3:1]-[#8X1-1:2]                                                                     :          0
+  29 Bonds/Bond/length/[#6X3:1]-[#8X1-1:2]                                                                :          0
+  30 Bonds/Bond/k/[#6X4:1]-[#8X2H0:2]                                                                     :          0
+  31 Bonds/Bond/length/[#6X4:1]-[#8X2H0:2]                                                                :          0
+  32 Bonds/Bond/k/[#6X3:1]-[#8X2:2]                                                                       :          0
+  33 Bonds/Bond/length/[#6X3:1]-[#8X2:2]                                                                  :          0
+  34 Bonds/Bond/k/[#6X3:1]-[#8X2H1:2]                                                                     :          0
+  35 Bonds/Bond/length/[#6X3:1]-[#8X2H1:2]                                                                :          0
+  36 Bonds/Bond/k/[#6X3a:1]-[#8X2H0:2]                                                                    :          0
+  37 Bonds/Bond/length/[#6X3a:1]-[#8X2H0:2]                                                               :          0
+  38 Bonds/Bond/k/[#6X3:1](=[#8X1])-[#8X2H0:2]                                                            :          0
+  39 Bonds/Bond/length/[#6X3:1](=[#8X1])-[#8X2H0:2]                                                       :          0
+  40 Bonds/Bond/k/[#6:1]=[#8X1+0,#8X2+1:2]                                                                :          0
+  41 Bonds/Bond/length/[#6:1]=[#8X1+0,#8X2+1:2]                                                           :          0
+  42 Bonds/Bond/k/[#6X3:1](~[#8X1])~[#8X1:2]                                                              :          0
+  43 Bonds/Bond/length/[#6X3:1](~[#8X1])~[#8X1:2]                                                         :          0
+  44 Bonds/Bond/k/[#6X2:1]-[#6:2]                                                                         :          0
+  45 Bonds/Bond/length/[#6X2:1]-[#6:2]                                                                    :          0
+  46 Bonds/Bond/k/[#6:1]#[#7:2]                                                                           :          0
+  47 Bonds/Bond/length/[#6:1]#[#7:2]                                                                      :          0
+  48 Bonds/Bond/k/[#7X3:1]-[#7X2:2]                                                                       :          0
+  49 Bonds/Bond/length/[#7X3:1]-[#7X2:2]                                                                  :          0
+  50 Bonds/Bond/k/[#7X2:1]-[#7X2:2]                                                                       :          0
+  51 Bonds/Bond/length/[#7X2:1]-[#7X2:2]                                                                  :          0
+  52 Bonds/Bond/k/[#7:1]=[#7:2]                                                                           :          0
+  53 Bonds/Bond/length/[#7:1]=[#7:2]                                                                      :          0
+  54 Bonds/Bond/k/[#16X2,#16X1-1,#16X3+1:1]-[#6X4:2]                                                      :          0
+  55 Bonds/Bond/length/[#16X2,#16X1-1,#16X3+1:1]-[#6X4:2]                                                 :          0
+  56 Bonds/Bond/k/[#16X2,#16X1-1,#16X3+1:1]-[#6X3:2]                                                      :          0
+  57 Bonds/Bond/length/[#16X2,#16X1-1,#16X3+1:1]-[#6X3:2]                                                 :          0
+  58 Bonds/Bond/k/[#16X4,#16X3!+1:1]-[#6:2]                                                               :          0
+  59 Bonds/Bond/length/[#16X4,#16X3!+1:1]-[#6:2]                                                          :          0
+  60 Bonds/Bond/k/[#16X4,#16X3:1]~[#7:2]                                                                  :          0
+  61 Bonds/Bond/length/[#16X4,#16X3:1]~[#7:2]                                                             :          0
+  62 Bonds/Bond/k/[#16X4,#16X3:1]~[#8X1:2]                                                                :          0
+  63 Bonds/Bond/length/[#16X4,#16X3:1]~[#8X1:2]                                                           :          0
+  64 Bonds/Bond/k/[#6:1]-[#9:2]                                                                           :          0
+  65 Bonds/Bond/length/[#6:1]-[#9:2]                                                                      :          0
+  66 Bonds/Bond/k/[#6X4:1]-[#9:2]                                                                         :          0
+  67 Bonds/Bond/length/[#6X4:1]-[#9:2]                                                                    :          0
+  68 Bonds/Bond/k/[#6:1]-[#17:2]                                                                          :          0
+  69 Bonds/Bond/length/[#6:1]-[#17:2]                                                                     :          0
+  70 Bonds/Bond/k/[#6:1]-[#35:2]                                                                          :          0
+  71 Bonds/Bond/length/[#6:1]-[#35:2]                                                                     :          0
+  72 Bonds/Bond/k/[#6X4:1]-[#1:2]                                                                         :        305
+  73 Bonds/Bond/length/[#6X4:1]-[#1:2]                                                                    :        305
+  74 Bonds/Bond/k/[#6X3:1]-[#1:2]                                                                         :         49
+  75 Bonds/Bond/length/[#6X3:1]-[#1:2]                                                                    :         49
+  76 Bonds/Bond/k/[#7:1]-[#1:2]                                                                           :          0
+  77 Bonds/Bond/length/[#7:1]-[#1:2]                                                                      :          0
+  78 Bonds/Bond/k/[#8:1]-[#1:2]                                                                           :          0
+  79 Bonds/Bond/length/[#8:1]-[#1:2]                                                                      :          0
+  80 Angles/Angle/angle/[*:1]~[#6X4:2]-[*:3]                                                              :        515
+  81 Angles/Angle/k/[*:1]~[#6X4:2]-[*:3]                                                                  :        515
+  82 Angles/Angle/angle/[#1:1]-[#6X4:2]-[#1:3]                                                            :        235
+  83 Angles/Angle/k/[#1:1]-[#6X4:2]-[#1:3]                                                                :        235
+  84 Angles/Angle/angle/[*;r3:1]~;@[*;r3:2]~;!@[*:3]                                                      :          0
+  85 Angles/Angle/k/[*;r3:1]~;@[*;r3:2]~;!@[*:3]                                                          :          0
+  86 Angles/Angle/angle/[*:1]~;!@[*;r3:2]~;!@[*:3]                                                        :          0
+  87 Angles/Angle/k/[*:1]~;!@[*;r3:2]~;!@[*:3]                                                            :          0
+  88 Angles/Angle/angle/[#1:1]-[*;r3:2]~;!@[*:3]                                                          :          0
+  89 Angles/Angle/k/[#1:1]-[*;r3:2]~;!@[*:3]                                                              :          0
+  90 Angles/Angle/angle/[#6r4:1]-;@[#6r4:2]-;@[#6r4:3]                                                    :          0
+  91 Angles/Angle/k/[#6r4:1]-;@[#6r4:2]-;@[#6r4:3]                                                        :          0
+  92 Angles/Angle/angle/[!#1:1]-[#6r4:2]-;!@[!#1:3]                                                       :          0
+  93 Angles/Angle/k/[!#1:1]-[#6r4:2]-;!@[!#1:3]                                                           :          0
+  94 Angles/Angle/angle/[!#1:1]-[#6r4:2]-;!@[#1:3]                                                        :          0
+  95 Angles/Angle/k/[!#1:1]-[#6r4:2]-;!@[#1:3]                                                            :          0
+  96 Angles/Angle/angle/[*:1]~[#6X3:2]~[*:3]                                                              :         35
+  97 Angles/Angle/k/[*:1]~[#6X3:2]~[*:3]                                                                  :         35
+  98 Angles/Angle/angle/[#1:1]-[#6X3:2]~[*:3]                                                             :         84
+  99 Angles/Angle/k/[#1:1]-[#6X3:2]~[*:3]                                                                 :         84
+ 100 Angles/Angle/angle/[*;r6:1]~;@[*;r5:2]~;@[*;r5;x2:3]                                                 :          0
+ 101 Angles/Angle/k/[*;r6:1]~;@[*;r5:2]~;@[*;r5;x2:3]                                                     :          0
+ 102 Angles/Angle/angle/[*:1]~;!@[*;X3;r5:2]~;@[*;r5:3]                                                   :          0
+ 103 Angles/Angle/k/[*:1]~;!@[*;X3;r5:2]~;@[*;r5:3]                                                       :          0
+ 104 Angles/Angle/angle/[#8X1:1]~[#6X3:2]~[#8:3]                                                          :          0
+ 105 Angles/Angle/k/[#8X1:1]~[#6X3:2]~[#8:3]                                                              :          0
+ 106 Angles/Angle/k/[*:1]~[#6X2:2]~[*:3]                                                                  :          0
+ 107 Angles/Angle/angle/[*:1]~[#7X4,#7X3,#7X2-1:2]~[*:3]                                                  :          0
+ 108 Angles/Angle/k/[*:1]~[#7X4,#7X3,#7X2-1:2]~[*:3]                                                      :          0
+ 109 Angles/Angle/angle/[*:1]@-[r!r6;#7X4,#7X3,#7X2-1:2]@-[*:3]                                           :          0
+ 110 Angles/Angle/k/[*:1]@-[r!r6;#7X4,#7X3,#7X2-1:2]@-[*:3]                                               :          0
+ 111 Angles/Angle/angle/[#1:1]-[#7X4,#7X3,#7X2-1:2]-[*:3]                                                 :          0
+ 112 Angles/Angle/k/[#1:1]-[#7X4,#7X3,#7X2-1:2]-[*:3]                                                     :          0
+ 113 Angles/Angle/angle/[*:1]~[#7X3$(*~[#6X3,#6X2,#7X2+0]):2]~[*:3]                                       :          0
+ 114 Angles/Angle/k/[*:1]~[#7X3$(*~[#6X3,#6X2,#7X2+0]):2]~[*:3]                                           :          0
+ 115 Angles/Angle/angle/[#1:1]-[#7X3$(*~[#6X3,#6X2,#7X2+0]):2]-[*:3]                                      :          0
+ 116 Angles/Angle/k/[#1:1]-[#7X3$(*~[#6X3,#6X2,#7X2+0]):2]-[*:3]                                          :          0
+ 117 Angles/Angle/angle/[*:1]~[#7X2+0:2]~[*:3]                                                            :          0
+ 118 Angles/Angle/k/[*:1]~[#7X2+0:2]~[*:3]                                                                :          0
+ 119 Angles/Angle/angle/[*:1]-[#8:2]-[*:3]                                                                :          0
+ 120 Angles/Angle/k/[*:1]-[#8:2]-[*:3]                                                                    :          0
+ 121 Angles/Angle/angle/[#6X3,#7:1]~;@[#8;r:2]~;@[#6X3,#7:3]                                              :          0
+ 122 Angles/Angle/k/[#6X3,#7:1]~;@[#8;r:2]~;@[#6X3,#7:3]                                                  :          0
+ 123 Angles/Angle/angle/[*:1]~[#16X4:2]~[*:3]                                                             :          0
+ 124 Angles/Angle/k/[*:1]~[#16X4:2]~[*:3]                                                                 :          0
+ 125 Angles/Angle/angle/[*:1]-[#16X4,#16X3+0:2]~[*:3]                                                     :          0
+ 126 Angles/Angle/k/[*:1]-[#16X4,#16X3+0:2]~[*:3]                                                         :          0
+ 127 Angles/Angle/angle/[#6X3:1]-[#16X2:2]-[#6X3:3]                                                       :          0
+ 128 Angles/Angle/k/[#6X3:1]-[#16X2:2]-[#6X3:3]                                                           :          0
+ 129 Angles/Angle/angle/[*;r5:1]1@[*;r5:2]@[*;r5:3]@[*;r5]@[*;r5]1                                        :          0
+ 130 Angles/Angle/k/[*;r5:1]1@[*;r5:2]@[*;r5:3]@[*;r5]@[*;r5]1                                            :          0
+ 131 Angles/Angle/angle/[*;r3:1]1~;@[*;r3:2]~;@[*;r3:3]1                                                  :          0
+ 132 Angles/Angle/k/[*;r3:1]1~;@[*;r3:2]~;@[*;r3:3]1                                                      :          0
+ 133 ProperTorsions/Proper/k1/[*:1]-[#6X4:2]-[#6X4:3]-[*:4]                                               :         63
+ 134 ProperTorsions/Proper/k3/[#6X4:1]-[#6X4:2]-[#6X4:3]-[#6X4:4]                                         :         27
+ 135 ProperTorsions/Proper/k1/[#6X4:1]-[#6X4:2]-[#6X4:3]-[#6X4:4]                                         :         27
+ 136 ProperTorsions/Proper/k2/[#6X4:1]-[#6X4:2]-[#6X4:3]-[#6X4:4]                                         :         27
+ 137 ProperTorsions/Proper/k1/[#1:1]-[#6X4:2]-[#6X4:3]-[#1:4]                                             :        402
+ 138 ProperTorsions/Proper/k1/[#1:1]-[#6X4:2]-[#6X4:3]-[#6X4:4]                                           :        228
+ 139 ProperTorsions/Proper/k1/[*:1]~[#6X3:2]-[#6X4:3]-[*:4]                                               :        105
+ 140 ProperTorsions/Proper/k1/[*:1]-[#6X4:2]-[#6X3:3]=[*:4]                                               :         21
+ 141 ProperTorsions/Proper/k1/[#1:1]-[#6X4:2]-[#6X3:3]=[#6X3:4]                                           :         84
+ 142 ProperTorsions/Proper/k2/[#1:1]-[#6X4:2]-[#6X3:3]=[#6X3:4]                                           :         84
+ 143 ProperTorsions/Proper/k1/[*:1]-,:[#6X3:2]=[#6X3:3]-,:[*:4]                                           :         70
+ 144 ProperTorsions/Proper/k1/[#6X4:1]-[#6X3:2]=[#6X3:3]-[#6X4:4]                                         :         14
+ 145 ProperTorsions/Proper/k2/[#6X4:1]-[#6X3:2]=[#6X3:3]-[#6X4:4]                                         :         14
+ 146 ImproperTorsions/Improper/k1/[*:1]~[#6X3:2](~[*:3])~[*:4]                                            :         42
+ 147 ImproperTorsions/Improper/k1/[*:1]~[#6X3:2](~[#8X1:3])~[#8:4]                                        :          0
+ 148 ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*~[#15,#16](!-[*])):2](~[*:3])~[*:4]                       :          0
+ 149 ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*~[#6X3]):2](~[*:3])~[*:4]                                 :          0
+ 150 ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*~[#7X2]):2](~[*:3])~[*:4]                                 :          0
+ 151 ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*@1-[*]=,:[*][*]=,:[*]@1):2](~[*:3])~[*:4]                 :          0
+ 152 ImproperTorsions/Improper/k1/[*:1]~[#6X3:2](=[#7X2,#7X3+1:3])~[#7:4]                                 :          0
+ 153 vdW/Atom/epsilon/[#1:1]-[#6X4]                                                                       :        305
+ 154 vdW/Atom/rmin_half/[#1:1]-[#6X4]                                                                     :        305
+ 155 vdW/Atom/epsilon/[#1:1]-[#6X3]                                                                       :         49
+ 156 vdW/Atom/rmin_half/[#1:1]-[#6X3]                                                                     :         49
+ 157 vdW/Atom/epsilon/[#6:1]                                                                              :         42
+ 158 vdW/Atom/rmin_half/[#6:1]                                                                            :         42
+ 159 vdW/Atom/epsilon/[#6X4:1]                                                                            :        125
+ 160 vdW/Atom/rmin_half/[#6X4:1]                                                                          :        125
+SMIRNOFF Parameter Coverage Analysis result: 40/161 parameters are covered.
+----------------------------------------------------------------------------------------------------------------------
+Using parabolic regularization (Gaussian prior) with strength 1.0e+00 (+), 0.0e+00 (x)
+2025/07/10 10:50:53.92 work_queue_python[3519362]tcp: listening on port 55481
+2025/07/10 16:50:53.92 work_queue_python[3519362]wq: Using default fast abort multiplier for 'default'.
+2025/07/10 16:50:53.92 work_queue_python[3519362]wq: workers connections -- known: 0, connecting: 0, available: 0.
+2025/07/10 16:50:53.92 work_queue_python[3519362]wq: Work Queue is listening on port 55481.
+Work Queue is listening on 55481
+#========================================================#
+#| [92m           Setup for objective function :           [0m |#
+#========================================================#
+penalty_additive          1.0 
+normalize_weights         False 
+wq_port                   55481 
+asynchronous              True 
+----------------------------------------------------------
+#========================================================#
+#| [92m                Setup for optimizer                 [0m |#
+#========================================================#
+jobtype                   OPTIMIZE 
+trust0                    -1.0 
+mintrust                  0.05 
+eps                       0.01 
+h                         0.01 
+h0                        0.01 
+convergence_objective     0.1 
+convergence_step          0.01 
+convergence_gradient      0.1 
+adapt_fac                 0.2 
+adapt_damp                1.0 
+print_hess                True 
+err_tol                   1.0 
+search_tol                0.1 
+backup                    False 
+retain_micro_outputs      False 
+input_file                optimize.in 
+criteria                  2 
+----------------------------------------------------------
+Calculation started at 2025-07-10 04:50 PM
+#========================================================#
+#| [1m                  Main Optimizer                    [0m |#
+#| [1m  Newton-Raphson Method (Hessian Diagonal Search)   [0m |#
+#| [1m                                                    [0m |#
+#| [1m       [0mConvergence criteria (2 of 3 needed):        [0m |#
+#| [1m          [0mObjective Function  : 1.000e-01           [0m |#
+#| [1m          [0mNorm of Gradient    : 1.000e-01           [0m |#
+#| [1m          [0mParameter step size : 1.000e-02           [0m |#
+#========================================================#
+#========================================================#
+#|       Color Key for Objective Function -=X2=-        |#
+#|  [1mBold[0m = Initial step                                 |#
+#|  [92mGreen = Current lowest value of objective function[0m  |#
+#|  [91mRed = Objective function rises, step rejected[0m       |#
+#|  [0mNo color = Not at the lowest value                  |#
+#========================================================#
+#========================================================#
+#| [94m     Iteration 0: Evaluating objective function     [0m |#
+#| [94m        and derivatives through second order        [0m |#
+#========================================================#
+Requesting the estimation of 32 properties, and their gradients with respect to 161 parameters.
+2025-07-10 10:50:55,683 ERROR: [91mFatal error in the main server loop[0m
+Traceback (most recent call last):
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-py3.10/lib/python3.11/site-packages/openff/evaluator/server/server.py", line 697, in _handle_connections
+    self._handle_stream(connection, connection.getpeername())
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-py3.10/lib/python3.11/site-packages/openff/evaluator/server/server.py", line 678, in _handle_stream
+    self._handle_job_submission(connection, address, message_length)
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-py3.10/lib/python3.11/site-packages/openff/evaluator/server/server.py", line 617, in _handle_job_submission
+    self._launch_batch(batch)
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-py3.10/lib/python3.11/site-packages/openff/evaluator/server/server.py", line 541, in _launch_batch
+    current_layer.schedule_calculation(
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-py3.10/lib/python3.11/site-packages/openff/evaluator/layers/layers.py", line 416, in schedule_calculation
+    futures = cls._schedule_calculation(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-py3.10/lib/python3.11/site-packages/openff/evaluator/layers/workflow.py", line 229, in _schedule_calculation
+    workflow_graph, provenance = cls._build_workflow_graph(
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-py3.10/lib/python3.11/site-packages/openff/evaluator/layers/workflow.py", line 135, in _build_workflow_graph
+    global_metadata = cls._get_workflow_metadata(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-py3.10/lib/python3.11/site-packages/openff/evaluator/layers/workflow.py", line 73, in _get_workflow_metadata
+    global_metadata = Workflow.generate_default_metadata(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-py3.10/lib/python3.11/site-packages/openff/evaluator/workflow/workflow.py", line 697, in generate_default_metadata
+    relevant_gradient_keys = Workflow._find_relevant_gradient_keys(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-py3.10/lib/python3.11/site-packages/openff/evaluator/workflow/workflow.py", line 609, in _find_relevant_gradient_keys
+    if isinstance(labelled_parameters[0], list):
+                  ~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
