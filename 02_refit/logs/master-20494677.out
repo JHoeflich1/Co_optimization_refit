@@ -1,0 +1,11 @@
+sending incremental file list
+optimize.in
+targets.tar.gz
+forcefield/
+forcefield/force-field.offxml
+forcefield/force_field_tagged.offxml
+forcefield/force_field_tagged_valence.offxml
+forcefield/force_field_tagged_vdw.offxml
+
+sent 351,917 bytes  received 138 bytes  704,110.00 bytes/sec
+total size is 351,313  speedup is 1.00

@@ -1,0 +1,546 @@
+/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/forcebalance/molecule.py:20: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import parse_version
+/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/distributed/node.py:187: UserWarning: Port 8787 is already in use.
+Perhaps you already have a cluster running?
+Hosting the HTTP server on port 45015 instead
+  warnings.warn(
+/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/forcebalance/molecule.py:20: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import parse_version
+#======================================================================#
+#| [1m            Welcome to ForceBalance version 1.9.6! =D             [0m |#
+#| [1m                 Force Field Optimization System                  [0m |#
+#| [1m                                                                  [0m |#
+#| [1m                             Authors:                             [0m |#
+#| [1m                          Lee-Ping Wang                           [0m |#
+#| [1m                  Yudong Qiu, Keri A. McKiernan                   [0m |#
+#| [1m          Jeffrey R. Wagner, Hyesu Jang, Simon Boothroyd          [0m |#
+#| [1m          Arthur Vigil, Erik G. Brandt, John Stoppelman           [0m |#
+#| [1m                  Johnny Israeli, Matt Thompson                   [0m |#
+#======================================================================#
+
+                          [44m     [0m                                        
+                       [44m        [0m      [43m     [0m                              
+                    [44m        [0m   [44m  [0m    [43m         [0m                          
+                 [44m       [0m    [44m      [0m      [43m         [0m                       
+             [44m        [0m    [44m        [0m          [43m         [0m                    
+          [44m        [0m    [44m        [0m                 [43m        [0m                 
+       [44m        [0m    [44m       [0m                        [43m        [0m              
+    [44m        [0m   [44m        [0m                              [43m         [0m          
+   [44m      [0m   [44m        [0m               `.:+@@###@'          [43m         [0m       
+    [44m [0m    [44m        [0m          ,;'+###############.             [43m     [0m       
+      [44m        [0m         +################':`                    [43m [0m        
+      [44m     [0m              `.,,...####+.                                  
+                                ,#####      +##.               [44m   [0m   [44m   [0m
+ [43m    [0m                            #####      ######             [44m   [0m   [44m   [0m
+ [43m    [0m                ###'        ####'     :#####'             [44m   [0m   [44m   [0m
+ [43m    [0m                :####@      ####.    ,####'               [44m   [0m   [44m   [0m
+ [43m    [0m                 ######     ####    +###+                 [44m   [0m   [44m   [0m
+ [43m    [0m                  #####     ####   ###;                   [44m   [0m   [44m   [0m
+ [43m    [0m                   :##      ####  ++`                     [44m   [0m   [44m   [0m
+ [43m    [0m                            ####``..:;+##############+`   [44m   [0m   [44m   [0m
+ [43m    [0m             .,:;;'++##################################`  [44m   [0m   [44m   [0m
+ [43m    [0m    `############################++++''';;;;;;;;;;;'';    [44m   [0m   [44m   [0m
+ [43m    [0m      ,########':,.``       ####                          [44m   [0m   [44m   [0m
+ [43m    [0m                            ####                          [44m   [0m   [44m   [0m
+ [43m    [0m                            ####                          [44m   [0m   [44m   [0m
+ [43m    [0m                            ####                          [44m   [0m   [44m   [0m
+ [43m    [0m                            ####                          [44m   [0m   [44m   [0m
+ [43m    [0m                            ####                          [44m   [0m   [44m   [0m
+ [43m    [0m                            ####                          [44m   [0m   [44m   [0m
+ [43m    [0m                            ####                          [44m   [0m   [44m   [0m
+      [44m    [0m                       ####                                   
+     [44m        [0m                    ####                                   
+    [44m [0m    [44m       [0m                 ####                       [43m     [0m       
+   [44m     [0m    [44m        [0m             ####                    [43m        [0m       
+   [44m        [0m    [44m        [0m          ###                  [43m         [0m         
+      [44m        [0m    [44m        [0m        +`               [43m        [0m             
+          [44m        [0m   [44m        [0m                   [43m        [0m                
+             [44m        [0m   [44m         [0m           [43m         [0m                   
+                [44m        [0m    [44m       [0m      [43m         [0m                      
+                   [44m        [0m    [44m   [0m    [43m        [0m                          
+                      [44m        [0m       [43m      [0m                             
+                          [44m      [0m      [43m  [0m                                
+                             [44m  [0m                                         
+
+Reading options from file: optimize.in
+#========================================================#
+#| [95m  Options at their default values are not printed   [0m |#
+#| [95m        Use 'verbose_options True' to Enable        [0m |#
+#========================================================#
+Reading force field from file: force_field_tagged.offxml
+#=========================================================#
+#| [92m Starting parameter indices, physical values and IDs [0m |#
+#=========================================================#
+   0 [  1.5113e+00 ] : Bonds/Bond/length/[#6X4:1]-[#6X4:2]
+   1 [  4.8898e+02 ] : Bonds/Bond/k/[#6X4:1]-[#6X4:2]
+   2 [  1.4252e+00 ] : Bonds/Bond/length/[#6:1]-[#8:2]
+   3 [  5.3660e+02 ] : Bonds/Bond/k/[#6:1]-[#8:2]
+   4 [  1.0895e+00 ] : Bonds/Bond/length/[#6X4:1]-[#1:2]
+   5 [  7.5053e+02 ] : Bonds/Bond/k/[#6X4:1]-[#1:2]
+   6 [  9.7018e-01 ] : Bonds/Bond/length/[#8:1]-[#1:2]
+   7 [  1.1235e+03 ] : Bonds/Bond/k/[#8:1]-[#1:2]
+   8 [  1.0970e+02 ] : Angles/Angle/angle/[*:1]~[#6X4:2]-[*:3]
+   9 [  1.3716e+02 ] : Angles/Angle/k/[*:1]~[#6X4:2]-[*:3]
+  10 [  1.0822e+02 ] : Angles/Angle/angle/[#1:1]-[#6X4:2]-[#1:3]
+  11 [  8.8585e+01 ] : Angles/Angle/k/[#1:1]-[#6X4:2]-[#1:3]
+  12 [  1.1797e+02 ] : Angles/Angle/angle/[*;r3:1]~;@[*;r3:2]~;!@[*:3]
+  13 [  1.1905e+02 ] : Angles/Angle/k/[*;r3:1]~;@[*;r3:2]~;!@[*:3]
+  14 [  1.1290e+02 ] : Angles/Angle/angle/[*:1]~;!@[*;r3:2]~;!@[*:3]
+  15 [  1.0971e+02 ] : Angles/Angle/k/[*:1]~;!@[*;r3:2]~;!@[*:3]
+  16 [  1.1513e+02 ] : Angles/Angle/angle/[#1:1]-[*;r3:2]~;!@[*:3]
+  17 [  5.0042e+01 ] : Angles/Angle/k/[#1:1]-[*;r3:2]~;!@[*:3]
+  18 [  1.0693e+02 ] : Angles/Angle/angle/[*:1]-[#8:2]-[*:3]
+  19 [  1.4613e+02 ] : Angles/Angle/k/[*:1]-[#8:2]-[*:3]
+  20 [  6.0000e+01 ] : Angles/Angle/angle/[*;r3:1]1~;@[*;r3:2]~;@[*;r3:3]1
+  21 [  1.1747e+02 ] : Angles/Angle/k/[*;r3:1]1~;@[*;r3:2]~;@[*;r3:3]1
+  22 [  2.3904e-01 ] : ProperTorsions/Proper/k1/[#1:1]-[#6X4:2]-[#6X4:3]-[#1:4]
+  23 [  8.8744e-02 ] : ProperTorsions/Proper/k1/[#1:1]-[#6X4:2]-[#6X4:3]-[#6X4:4]
+  24 [  5.3001e+00 ] : ImproperTorsions/Improper/k1/[*:1]~[#6X3:2](~[*:3])~[*:4]
+  25 [  1.3037e+01 ] : ImproperTorsions/Improper/k1/[*:1]~[#6X3:2](~[#8X1:3])~[#8:4]
+  26 [  1.3645e+01 ] : ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*~[#15,#16](!-[*])):2](~[*:3])~[*:4]
+  27 [  1.2794e+00 ] : ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*~[#6X3]):2](~[*:3])~[*:4]
+  28 [ -2.2493e+00 ] : ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*~[#7X2]):2](~[*:3])~[*:4]
+  29 [  1.5972e+01 ] : ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*@1-[*]=,:[*][*]=,:[*]@1):2](~[*:3])~[*:4]
+  30 [  1.0030e+01 ] : ImproperTorsions/Improper/k1/[*:1]~[#6X3:2](=[#7X2,#7X3+1:3])~[#7:4]
+  31 [  1.5779e-02 ] : vdW/Atom/epsilon/[#1:1]-[#6X4]
+  32 [  1.4842e+00 ] : vdW/Atom/rmin_half/[#1:1]-[#6X4]
+  33 [  1.0884e-01 ] : vdW/Atom/epsilon/[#6X4:1]
+  34 [  1.8967e+00 ] : vdW/Atom/rmin_half/[#6X4:1]
+-----------------------------------------------------------
+#=========================================================#
+#| [91m Rescaling Factors by Type (Lower Takes Precedence): [0m |#
+#=========================================================#
+   ProperTorsions/Proper/k1             : 2.39039e-01
+   ImproperTorsions/Improper/k1         : 1.59721e+01
+   Angles/Angle/k                       : 1.00000e+02
+   Angles/Angle/angle                   : 5.00000e+00
+   Bonds/Bond/k                         : 1.00000e+02
+   Bonds/Bond/length                    : 1.00000e-01
+   ProperTorsions/Proper/k              : 5.00000e+00
+   ImproperTorsions/Improper/k          : 5.00000e+00
+   vdW/Atom/epsilon                     : 1.00000e-01
+   vdW/Atom/rmin_half                   : 1.00000e+00
+-----------------------------------------------------------
+#========================================================#
+#| [91m   Rescaling Types / Factors by Parameter Number:   [0m |#
+#========================================================#
+   0 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X4:1]-[#6X4:2]
+   1 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X4:1]-[#6X4:2]
+   2 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6:1]-[#8:2]
+   3 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6:1]-[#8:2]
+   4 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#6X4:1]-[#1:2]
+   5 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#6X4:1]-[#1:2]
+   6 [    Bonds/Bond/length             : 1.00000e-01 ] : Bonds/Bond/length/[#8:1]-[#1:2]
+   7 [    Bonds/Bond/k                  : 1.00000e+02 ] : Bonds/Bond/k/[#8:1]-[#1:2]
+   8 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*:1]~[#6X4:2]-[*:3]
+   9 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*:1]~[#6X4:2]-[*:3]
+  10 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[#1:1]-[#6X4:2]-[#1:3]
+  11 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[#1:1]-[#6X4:2]-[#1:3]
+  12 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*;r3:1]~;@[*;r3:2]~;!@[*:3]
+  13 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*;r3:1]~;@[*;r3:2]~;!@[*:3]
+  14 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*:1]~;!@[*;r3:2]~;!@[*:3]
+  15 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*:1]~;!@[*;r3:2]~;!@[*:3]
+  16 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[#1:1]-[*;r3:2]~;!@[*:3]
+  17 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[#1:1]-[*;r3:2]~;!@[*:3]
+  18 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*:1]-[#8:2]-[*:3]
+  19 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*:1]-[#8:2]-[*:3]
+  20 [    Angles/Angle/angle            : 5.00000e+00 ] : Angles/Angle/angle/[*;r3:1]1~;@[*;r3:2]~;@[*;r3:3]1
+  21 [    Angles/Angle/k                : 1.00000e+02 ] : Angles/Angle/k/[*;r3:1]1~;@[*;r3:2]~;@[*;r3:3]1
+  22 [    ProperTorsions/Proper/k       : 5.00000e+00 ] : ProperTorsions/Proper/k1/[#1:1]-[#6X4:2]-[#6X4:3]-[#1:4]
+  23 [    ProperTorsions/Proper/k       : 5.00000e+00 ] : ProperTorsions/Proper/k1/[#1:1]-[#6X4:2]-[#6X4:3]-[#6X4:4]
+  24 [    ImproperTorsions/Improper/k   : 5.00000e+00 ] : ImproperTorsions/Improper/k1/[*:1]~[#6X3:2](~[*:3])~[*:4]
+  25 [    ImproperTorsions/Improper/k   : 5.00000e+00 ] : ImproperTorsions/Improper/k1/[*:1]~[#6X3:2](~[#8X1:3])~[#8:4]
+  26 [    ImproperTorsions/Improper/k   : 5.00000e+00 ] : ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*~[#15,#16](!-[*])):2](~[*:3])~[*:4]
+  27 [    ImproperTorsions/Improper/k   : 5.00000e+00 ] : ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*~[#6X3]):2](~[*:3])~[*:4]
+  28 [    ImproperTorsions/Improper/k   : 5.00000e+00 ] : ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*~[#7X2]):2](~[*:3])~[*:4]
+  29 [    ImproperTorsions/Improper/k   : 5.00000e+00 ] : ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*@1-[*]=,:[*][*]=,:[*]@1):2](~[*:3])~[*:4]
+  30 [    ImproperTorsions/Improper/k   : 5.00000e+00 ] : ImproperTorsions/Improper/k1/[*:1]~[#6X3:2](=[#7X2,#7X3+1:3])~[#7:4]
+  31 [    vdW/Atom/epsilon              : 1.00000e-01 ] : vdW/Atom/epsilon/[#1:1]-[#6X4]
+  32 [    vdW/Atom/rmin_half            : 1.00000e+00 ] : vdW/Atom/rmin_half/[#1:1]-[#6X4]
+  33 [    vdW/Atom/epsilon              : 1.00000e-01 ] : vdW/Atom/epsilon/[#6X4:1]
+  34 [    vdW/Atom/rmin_half            : 1.00000e+00 ] : vdW/Atom/rmin_half/[#6X4:1]
+----------------------------------------------------------
+#========================================================#
+#| [92m               Setup for force field                [0m |#
+#========================================================#
+fnms                      ['force_field_tagged.offxml'] 
+priors                    OrderedDict([('Angles/Angle/k', 100.0), ('Angles/Angle/angle', 5.0), ('Bonds/Bond/k', 100.0), ('Bonds/Bond/length', 0.1), ('ProperTorsions/Proper/k', 5.0), ('ImproperTorsions/Improper/k', 5.0), ('vdW/Atom/epsilon', 0.1), ('vdW/Atom/rmin_half', 1.0)]) 
+----------------------------------------------------------
+targets/pure_data/options.json
+#========================================================#
+#| [92m             Loaded experimental data.              [0m |#
+#========================================================#
+#========================================================#
+#| [92m     Reference CCCCCCCC{solv}{x=1.000000} data      [0m |#
+#========================================================#
+Density 298.15 kelvin-101.325 kilopascal 698.7500000000001 kilogram / meter ** 3+/-9.999999999999998 kilogram / meter ** 3 
+----------------------------------------------------------
+#========================================================#
+#| [92m            Setup for target pure_data :            [0m |#
+#========================================================#
+name                      pure_data 
+type                      EVALUATOR_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/pure_data 
+evaluator_input           options.json 
+----------------------------------------------------------
+#========================================================#
+#| [92m        Setup for target torsion-137755383 :        [0m |#
+#========================================================#
+name                      torsion-137755383 
+type                      TORSIONPROFILE_SMIRNOFF 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/torsion-137755383 
+----------------------------------------------------------
+#========================================================#
+#| [92m         Setup for target opt-geo-batch-0 :         [0m |#
+#========================================================#
+name                      opt-geo-batch-0 
+type                      OPTGEOTARGET_SMIRNOFF 
+weight                    0.01 
+h                         0.01 
+backup                    False 
+tgtdir                    targets/opt-geo-batch-0 
+----------------------------------------------------------
+#========================================================#
+#| [92m        SMIRNOFF Parameter Coverage Analysis        [0m |#
+#========================================================#
+Reading optgeo options from file: targets/opt-geo-batch-0/optgeo_options.txt
+Force field assignment data written to /gpfs/alpine1/scratch/juho8819/tmp/20494677/smirnoff_parameter_assignments.json
+ idx Parameter                                                                                                   Count
+----------------------------------------------------------------------------------------------------------------------
+   0 Bonds/Bond/length/[#6X4:1]-[#6X4:2]                                                                  :         10
+   1 Bonds/Bond/k/[#6X4:1]-[#6X4:2]                                                                       :         10
+   2 Bonds/Bond/length/[#6:1]-[#8:2]                                                                      :          2
+   3 Bonds/Bond/k/[#6:1]-[#8:2]                                                                           :          2
+   4 Bonds/Bond/length/[#6X4:1]-[#1:2]                                                                    :         22
+   5 Bonds/Bond/k/[#6X4:1]-[#1:2]                                                                         :         22
+   6 Bonds/Bond/length/[#8:1]-[#1:2]                                                                      :          2
+   7 Bonds/Bond/k/[#8:1]-[#1:2]                                                                           :          2
+   8 Angles/Angle/angle/[*:1]~[#6X4:2]-[*:3]                                                              :         36
+   9 Angles/Angle/k/[*:1]~[#6X4:2]-[*:3]                                                                  :         36
+  10 Angles/Angle/angle/[#1:1]-[#6X4:2]-[#1:3]                                                            :         12
+  11 Angles/Angle/k/[#1:1]-[#6X4:2]-[#1:3]                                                                :         12
+  12 Angles/Angle/angle/[*;r3:1]~;@[*;r3:2]~;!@[*:3]                                                      :         12
+  13 Angles/Angle/k/[*;r3:1]~;@[*;r3:2]~;!@[*:3]                                                          :         12
+  14 Angles/Angle/angle/[*:1]~;!@[*;r3:2]~;!@[*:3]                                                        :          1
+  15 Angles/Angle/k/[*:1]~;!@[*;r3:2]~;!@[*:3]                                                            :          1
+  16 Angles/Angle/angle/[#1:1]-[*;r3:2]~;!@[*:3]                                                          :          2
+  17 Angles/Angle/k/[#1:1]-[*;r3:2]~;!@[*:3]                                                              :          2
+  18 Angles/Angle/angle/[*:1]-[#8:2]-[*:3]                                                                :          2
+  19 Angles/Angle/k/[*:1]-[#8:2]-[*:3]                                                                    :          2
+  20 Angles/Angle/angle/[*;r3:1]1~;@[*;r3:2]~;@[*;r3:3]1                                                  :          3
+  21 Angles/Angle/k/[*;r3:1]1~;@[*;r3:2]~;@[*;r3:3]1                                                      :          3
+  22 ProperTorsions/Proper/k1/[#1:1]-[#6X4:2]-[#6X4:3]-[#1:4]                                             :         28
+  23 ProperTorsions/Proper/k1/[#1:1]-[#6X4:2]-[#6X4:3]-[#6X4:4]                                           :         22
+  24 ImproperTorsions/Improper/k1/[*:1]~[#6X3:2](~[*:3])~[*:4]                                            :          0
+  25 ImproperTorsions/Improper/k1/[*:1]~[#6X3:2](~[#8X1:3])~[#8:4]                                        :          0
+  26 ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*~[#15,#16](!-[*])):2](~[*:3])~[*:4]                       :          0
+  27 ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*~[#6X3]):2](~[*:3])~[*:4]                                 :          0
+  28 ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*~[#7X2]):2](~[*:3])~[*:4]                                 :          0
+  29 ImproperTorsions/Improper/k1/[*:1]~[#7X3$(*@1-[*]=,:[*][*]=,:[*]@1):2](~[*:3])~[*:4]                 :          0
+  30 ImproperTorsions/Improper/k1/[*:1]~[#6X3:2](=[#7X2,#7X3+1:3])~[#7:4]                                 :          0
+  31 vdW/Atom/epsilon/[#1:1]-[#6X4]                                                                       :         20
+  32 vdW/Atom/rmin_half/[#1:1]-[#6X4]                                                                     :         20
+  33 vdW/Atom/epsilon/[#6X4:1]                                                                            :         11
+  34 vdW/Atom/rmin_half/[#6X4:1]                                                                          :         11
+SMIRNOFF Parameter Coverage Analysis result: 28/35 parameters are covered.
+----------------------------------------------------------------------------------------------------------------------
+Using parabolic regularization (Gaussian prior) with strength 1.0e+00 (+), 0.0e+00 (x)
+2025/08/05 17:52:30.46 work_queue_python[2490156]tcp: listening on port 55481
+2025/08/05 23:52:30.46 work_queue_python[2490156]wq: Using default fast abort multiplier for 'default'.
+2025/08/05 23:52:30.46 work_queue_python[2490156]wq: workers connections -- known: 0, connecting: 0, available: 0.
+2025/08/05 23:52:30.46 work_queue_python[2490156]wq: Work Queue is listening on port 55481.
+Work Queue is listening on 55481
+#========================================================#
+#| [92m           Setup for objective function :           [0m |#
+#========================================================#
+penalty_additive          1.0 
+normalize_weights         False 
+wq_port                   55481 
+asynchronous              True 
+----------------------------------------------------------
+#========================================================#
+#| [92m                Setup for optimizer                 [0m |#
+#========================================================#
+jobtype                   OPTIMIZE 
+trust0                    -1.0 
+mintrust                  0.05 
+eps                       0.01 
+h                         0.01 
+h0                        0.01 
+convergence_objective     0.1 
+convergence_step          0.01 
+convergence_gradient      0.1 
+adapt_fac                 0.2 
+adapt_damp                1.0 
+print_hess                True 
+err_tol                   1.0 
+search_tol                0.1 
+backup                    False 
+retain_micro_outputs      False 
+input_file                optimize.in 
+criteria                  2 
+----------------------------------------------------------
+Calculation started at 2025-08-05 11:52 PM
+#========================================================#
+#| [1m                  Main Optimizer                    [0m |#
+#| [1m  Newton-Raphson Method (Hessian Diagonal Search)   [0m |#
+#| [1m                                                    [0m |#
+#| [1m       [0mConvergence criteria (2 of 3 needed):        [0m |#
+#| [1m          [0mObjective Function  : 1.000e-01           [0m |#
+#| [1m          [0mNorm of Gradient    : 1.000e-01           [0m |#
+#| [1m          [0mParameter step size : 1.000e-02           [0m |#
+#========================================================#
+#========================================================#
+#|       Color Key for Objective Function -=X2=-        |#
+#|  [1mBold[0m = Initial step                                 |#
+#|  [92mGreen = Current lowest value of objective function[0m  |#
+#|  [91mRed = Objective function rises, step rejected[0m       |#
+#|  [0mNo color = Not at the lowest value                  |#
+#========================================================#
+#========================================================#
+#| [94m     Iteration 0: Evaluating objective function     [0m |#
+#| [94m        and derivatives through second order        [0m |#
+#========================================================#
+Requesting the estimation of 1 properties, and their gradients with respect to 35 parameters.
+Working in TMPDIR: /scratch/alpine/juho8819/tmp/20494677
+[DEBUG] Estimating gradients with respect to 35 parameters:
+  [0] Tag: Bonds, SMIRKS: [#6X4:1]-[#6X4:2]
+  [1] Tag: Bonds, SMIRKS: [#6X4:1]-[#6X4:2]
+  [2] Tag: Bonds, SMIRKS: [#6:1]-[#8:2]
+  [3] Tag: Bonds, SMIRKS: [#6:1]-[#8:2]
+  [4] Tag: Bonds, SMIRKS: [#6X4:1]-[#1:2]
+  [5] Tag: Bonds, SMIRKS: [#6X4:1]-[#1:2]
+  [6] Tag: Bonds, SMIRKS: [#8:1]-[#1:2]
+  [7] Tag: Bonds, SMIRKS: [#8:1]-[#1:2]
+  [8] Tag: Angles, SMIRKS: [*:1]~[#6X4:2]-[*:3]
+  [9] Tag: Angles, SMIRKS: [*:1]~[#6X4:2]-[*:3]
+  [10] Tag: Angles, SMIRKS: [#1:1]-[#6X4:2]-[#1:3]
+  [11] Tag: Angles, SMIRKS: [#1:1]-[#6X4:2]-[#1:3]
+  [12] Tag: Angles, SMIRKS: [*;r3:1]~;@[*;r3:2]~;!@[*:3]
+  [13] Tag: Angles, SMIRKS: [*;r3:1]~;@[*;r3:2]~;!@[*:3]
+  [14] Tag: Angles, SMIRKS: [*:1]~;!@[*;r3:2]~;!@[*:3]
+  [15] Tag: Angles, SMIRKS: [*:1]~;!@[*;r3:2]~;!@[*:3]
+  [16] Tag: Angles, SMIRKS: [#1:1]-[*;r3:2]~;!@[*:3]
+  [17] Tag: Angles, SMIRKS: [#1:1]-[*;r3:2]~;!@[*:3]
+  [18] Tag: Angles, SMIRKS: [*:1]-[#8:2]-[*:3]
+  [19] Tag: Angles, SMIRKS: [*:1]-[#8:2]-[*:3]
+  [20] Tag: Angles, SMIRKS: [*;r3:1]1~;@[*;r3:2]~;@[*;r3:3]1
+  [21] Tag: Angles, SMIRKS: [*;r3:1]1~;@[*;r3:2]~;@[*;r3:3]1
+  [22] Tag: ProperTorsions, SMIRKS: [#1:1]-[#6X4:2]-[#6X4:3]-[#1:4]
+  [23] Tag: ProperTorsions, SMIRKS: [#1:1]-[#6X4:2]-[#6X4:3]-[#6X4:4]
+  [24] Tag: ImproperTorsions, SMIRKS: [*:1]~[#6X3:2](~[*:3])~[*:4]
+  [25] Tag: ImproperTorsions, SMIRKS: [*:1]~[#6X3:2](~[#8X1:3])~[#8:4]
+  [26] Tag: ImproperTorsions, SMIRKS: [*:1]~[#7X3$(*~[#15,#16](!-[*])):2](~[*:3])~[*:4]
+  [27] Tag: ImproperTorsions, SMIRKS: [*:1]~[#7X3$(*~[#6X3]):2](~[*:3])~[*:4]
+  [28] Tag: ImproperTorsions, SMIRKS: [*:1]~[#7X3$(*~[#7X2]):2](~[*:3])~[*:4]
+  [29] Tag: ImproperTorsions, SMIRKS: [*:1]~[#7X3$(*@1-[*]=,:[*][*]=,:[*]@1):2](~[*:3])~[*:4]
+  [30] Tag: ImproperTorsions, SMIRKS: [*:1]~[#6X3:2](=[#7X2,#7X3+1:3])~[#7:4]
+  [31] Tag: vdW, SMIRKS: [#1:1]-[#6X4]
+  [32] Tag: vdW, SMIRKS: [#1:1]-[#6X4]
+  [33] Tag: vdW, SMIRKS: [#6X4:1]
+  [34] Tag: vdW, SMIRKS: [#6X4:1]
+[DEBUG] Molecules being labeled:
+  SMILES: [H]C([H])([H])C([H])([H])C([H])([H])C([H])([H])C([H])([H])C([H])([H])C([H])([H])C([H])([H])[H] | n_atoms: 26
+[DEBUG] MATCH FOUND:
+  Tag     : Bonds
+  SMIRKS  : [#6X4:1]-[#6X4:2]
+  Matched : [#6X4:1]-[#6X4:2]
+---------------------------------------------------------------------------------
+[DEBUG] MATCH FOUND:
+  Tag     : Bonds
+  SMIRKS  : [#6X4:1]-[#6X4:2]
+  Matched : [#6X4:1]-[#6X4:2]
+---------------------------------------------------------------------------------
+[DEBUG] MATCH FOUND:
+  Tag     : Bonds
+  SMIRKS  : [#6X4:1]-[#1:2]
+  Matched : [#6X4:1]-[#1:2]
+---------------------------------------------------------------------------------
+[DEBUG] MATCH FOUND:
+  Tag     : Bonds
+  SMIRKS  : [#6X4:1]-[#1:2]
+  Matched : [#6X4:1]-[#1:2]
+---------------------------------------------------------------------------------
+[DEBUG] MATCH FOUND:
+  Tag     : Angles
+  SMIRKS  : [*:1]~[#6X4:2]-[*:3]
+  Matched : [*:1]~[#6X4:2]-[*:3]
+---------------------------------------------------------------------------------
+[DEBUG] MATCH FOUND:
+  Tag     : Angles
+  SMIRKS  : [*:1]~[#6X4:2]-[*:3]
+  Matched : [*:1]~[#6X4:2]-[*:3]
+---------------------------------------------------------------------------------
+[DEBUG] MATCH FOUND:
+  Tag     : Angles
+  SMIRKS  : [#1:1]-[#6X4:2]-[#1:3]
+  Matched : [#1:1]-[#6X4:2]-[#1:3]
+---------------------------------------------------------------------------------
+[DEBUG] MATCH FOUND:
+  Tag     : Angles
+  SMIRKS  : [#1:1]-[#6X4:2]-[#1:3]
+  Matched : [#1:1]-[#6X4:2]-[#1:3]
+---------------------------------------------------------------------------------
+[DEBUG] MATCH FOUND:
+  Tag     : ProperTorsions
+  SMIRKS  : [#1:1]-[#6X4:2]-[#6X4:3]-[#1:4]
+  Matched : [#1:1]-[#6X4:2]-[#6X4:3]-[#1:4]
+---------------------------------------------------------------------------------
+[DEBUG] MATCH FOUND:
+  Tag     : ProperTorsions
+  SMIRKS  : [#1:1]-[#6X4:2]-[#6X4:3]-[#6X4:4]
+  Matched : [#1:1]-[#6X4:2]-[#6X4:3]-[#6X4:4]
+---------------------------------------------------------------------------------
+[DEBUG] No labelled parameters found for parameter_key:
+  tag     : ImproperTorsions
+  smirks  : [*:1]~[#6X3:2](~[*:3])~[*:4]
+  tagged_dict type: <class 'openff.toolkit.topology.topology.ImproperDict'>
+  Matches found: 0
+---------------------------------------------------------------------------------
+[DEBUG] No labelled parameters found for parameter_key:
+  tag     : ImproperTorsions
+  smirks  : [*:1]~[#6X3:2](~[#8X1:3])~[#8:4]
+  tagged_dict type: <class 'openff.toolkit.topology.topology.ImproperDict'>
+  Matches found: 0
+---------------------------------------------------------------------------------
+[DEBUG] No labelled parameters found for parameter_key:
+  tag     : ImproperTorsions
+  smirks  : [*:1]~[#7X3$(*~[#15,#16](!-[*])):2](~[*:3])~[*:4]
+  tagged_dict type: <class 'openff.toolkit.topology.topology.ImproperDict'>
+  Matches found: 0
+---------------------------------------------------------------------------------
+[DEBUG] No labelled parameters found for parameter_key:
+  tag     : ImproperTorsions
+  smirks  : [*:1]~[#7X3$(*~[#6X3]):2](~[*:3])~[*:4]
+  tagged_dict type: <class 'openff.toolkit.topology.topology.ImproperDict'>
+  Matches found: 0
+---------------------------------------------------------------------------------
+[DEBUG] No labelled parameters found for parameter_key:
+  tag     : ImproperTorsions
+  smirks  : [*:1]~[#7X3$(*~[#7X2]):2](~[*:3])~[*:4]
+  tagged_dict type: <class 'openff.toolkit.topology.topology.ImproperDict'>
+  Matches found: 0
+---------------------------------------------------------------------------------
+[DEBUG] No labelled parameters found for parameter_key:
+  tag     : ImproperTorsions
+  smirks  : [*:1]~[#7X3$(*@1-[*]=,:[*][*]=,:[*]@1):2](~[*:3])~[*:4]
+  tagged_dict type: <class 'openff.toolkit.topology.topology.ImproperDict'>
+  Matches found: 0
+---------------------------------------------------------------------------------
+[DEBUG] No labelled parameters found for parameter_key:
+  tag     : ImproperTorsions
+  smirks  : [*:1]~[#6X3:2](=[#7X2,#7X3+1:3])~[#7:4]
+  tagged_dict type: <class 'openff.toolkit.topology.topology.ImproperDict'>
+  Matches found: 0
+---------------------------------------------------------------------------------
+[DEBUG] MATCH FOUND:
+  Tag     : vdW
+  SMIRKS  : [#1:1]-[#6X4]
+  Matched : [#1:1]-[#6X4]
+---------------------------------------------------------------------------------
+[DEBUG] MATCH FOUND:
+  Tag     : vdW
+  SMIRKS  : [#1:1]-[#6X4]
+  Matched : [#1:1]-[#6X4]
+---------------------------------------------------------------------------------
+[DEBUG] MATCH FOUND:
+  Tag     : vdW
+  SMIRKS  : [#6X4:1]
+  Matched : [#6X4:1]
+---------------------------------------------------------------------------------
+[DEBUG] MATCH FOUND:
+  Tag     : vdW
+  SMIRKS  : [#6X4:1]
+  Matched : [#6X4:1]
+---------------------------------------------------------------------------------
+Warning: Cannot perform Hydrogen sampling with GPU-Omega: GPU-Omega disabled.
+Warning: Cannot perform Hydrogen sampling with GPU-Omega: GPU-Omega disabled.
+2025/08/06 00:12:31.39 work_queue_python[2490156]wq: Task 1 state change: UNKNOWN (0) to WAITING (1)
+2025/08/06 00:12:31.39 work_queue_python[2490156]wq: workers connections -- known: 0, connecting: 0, available: 0.
+2025/08/06 00:12:31.39 work_queue_python[2490156]wq: Task 2 state change: UNKNOWN (0) to WAITING (1)
+Traceback (most recent call last):
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/bin/ForceBalance.py", line 45, in Run_ForceBalance
+    optimizer.Run()
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/forcebalance/optimizer.py", line 322, in Run
+    xk = self.OptTab[self.jobtype]()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/forcebalance/optimizer.py", line 951, in NewtonRaphson
+    return self.MainOptimizer(b_BFGS=0)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/forcebalance/optimizer.py", line 496, in MainOptimizer
+    data        = self.Objective.Full(xk,Ord,verbose=True)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/forcebalance/objective.py", line 314, in Full
+    Objective = self.Target_Terms(vals, Order, verbose, customdir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/forcebalance/objective.py", line 232, in Target_Terms
+    Ans = Funcs[Order](mvals, customdir=customdir)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/forcebalance/target.py", line 319, in get_H
+    Ans = self.meta_get(mvals,1,1,customdir=customdir)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/forcebalance/target.py", line 584, in meta_get
+    Answer = self.get(mvals, AGrad, AHess)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/forcebalance/evaluator_io.py", line 742, in get
+    estimated_data_set, estimated_gradients = self._extract_property_data(
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/forcebalance/evaluator_io.py", line 589, in _extract_property_data
+    Evaluator_SMIRNOFF._check_estimation_request(estimation_request)
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/forcebalance/evaluator_io.py", line 566, in _check_estimation_request
+    raise ValueError(
+ValueError: Some properties could not be estimated:
+
+6102465389470915233|conditional_group failed to execute.
+
+Traceback (most recent call last):
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/openff/evaluator/workflow/protocols.py", line 1201, in _execute_protocol
+    protocol.execute(directory, available_resources)
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/openff/evaluator/workflow/protocols.py", line 688, in execute
+    self._execute(directory, available_resources)
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/openff/evaluator/protocols/groups.py", line 289, in _execute
+    super(ConditionalGroup, self)._execute(directory, available_resources)
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/openff/evaluator/workflow/protocols.py", line 1431, in _execute
+    self._inner_graph.execute(
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/openff/evaluator/workflow/protocols.py", line 1054, in execute
+    protocol_outputs[protocol_id] = ProtocolGraph._execute_protocol(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/openff/evaluator/workflow/protocols.py", line 1201, in _execute_protocol
+    protocol.execute(directory, available_resources)
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/openff/evaluator/workflow/protocols.py", line 688, in execute
+    self._execute(directory, available_resources)
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/openff/evaluator/protocols/openmm.py", line 584, in _execute
+    _compute_gradients(
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/openff/evaluator/protocols/openmm.py", line 247, in _compute_gradients
+    reverse_energies = _evaluate_energies(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/openff/evaluator/protocols/openmm.py", line 122, in _evaluate_energies
+    openmm_context = openmm.Context(system, integrator, platform)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/projects/juho8819/software/anaconda/envs/co-optimization-cuda/lib/python3.11/site-packages/openmm/openmm.py", line 14269, in __init__
+    _openmm.Context_swiginit(self, _openmm.new_Context(*args))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+openmm.OpenMMException: Cannot create a Context for a System with no particles
+.
+2025/08/06 00:12:31.62 work_queue_python[2490156]wq: workers connections -- known: 0, connecting: 0, available: 0.
+2025/08/06 00:12:31.62 work_queue_python[2490156]wq: Advertising manager status to the catalog server(s) at catalog.cse.nd.edu,backup-catalog.cse.nd.edu ...
+2025/08/06 00:12:31.63 work_queue_python[2490156]debug: compressed update message from 2161 to 771 bytes
+2025/08/06 00:12:31.63 work_queue_python[2490156]dns: looking up name catalog.cse.nd.edu
+2025/08/06 00:12:31.73 work_queue_python[2490156]dns: catalog.cse.nd.edu is 129.74.152.177
+2025/08/06 00:12:31.73 work_queue_python[2490156]debug: sending update via tcp to catalog.cse.nd.edu(129.74.152.177):9098 (background pid 2508515)
+2025/08/06 00:12:31.74 work_queue_python[2490156]dns: looking up name backup-catalog.cse.nd.edu
+2025/08/06 00:12:31.74 work_queue_python[2508516]debug: sending update via tcp to catalog.cse.nd.edu(129.74.152.177):9098
+2025/08/06 00:12:31.74 work_queue_python[2508516]tcp: connecting to 129.74.152.177 port 9098
+2025/08/06 00:12:31.78 work_queue_python[2508516]tcp: made connection to 129.74.152.177 port 9098
+2025/08/06 00:12:31.78 work_queue_python[2508516]tcp: disconnected from 129.74.152.177 port 9098
+2025/08/06 00:12:31.81 work_queue_python[2490156]dns: backup-catalog.cse.nd.edu is 129.74.247.43
+2025/08/06 00:12:31.82 work_queue_python[2490156]debug: sending update via tcp to backup-catalog.cse.nd.edu(129.74.247.43):9098 (background pid 2508517)
+2025/08/06 00:12:31.85 work_queue_python[2508518]debug: sending update via tcp to backup-catalog.cse.nd.edu(129.74.247.43):9098
+2025/08/06 00:12:31.85 work_queue_python[2508518]tcp: connecting to 129.74.247.43 port 9098
+2025/08/06 00:12:31.90 work_queue_python[2508518]tcp: made connection to 129.74.247.43 port 9098
+2025/08/06 00:12:31.90 work_queue_python[2508518]tcp: disconnected from 129.74.247.43 port 9098
+-- Force field done --
