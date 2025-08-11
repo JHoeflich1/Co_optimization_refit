@@ -1,6 +1,0 @@
-Modifications were made to openff/evaluator/workflow/workflow.py code to solve issue in /01_refit.
-
-Evaluator still has issues creating a system to calculate condensed phase properties. OpenMM fails to build system to evaluate energies.
-
-To replicate
-
