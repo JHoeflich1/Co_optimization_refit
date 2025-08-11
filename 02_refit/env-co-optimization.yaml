@@ -1,0 +1,33 @@
+name: co-optimization-cuda
+channels:
+  - conda-forge
+  - openeye
+dependencies:
+  - python
+  - openff-evaluator >=0.5.0
+  - openff-toolkit-base=0.16.5
+  - openeye::openeye-toolkits
+  - openff-interchange-base
+  - openff-forcefields
+  - openff-qcsubmit
+  - openff-bespokefit
+  - qcportal
+  - openmm          
+  - openmmtools   
+  - ambertools
+  - pymbar=3.1.0
+  - geometric
+  - qubekit
+  - ndcctools
+  - cmiles
+  - tqdm
+  - click
+  - jupyter
+  - black
+  - isort
+  - flake8
+  - mamba
+  - forcebalance
+  - pip:
+      - git+https://github.com/JHoeflich1/openff-evaluator.git@main
+      - git+https://github.com/openforcefield/yammbs.git@4b45c33

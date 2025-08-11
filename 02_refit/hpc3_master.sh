@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH -J vdw-valence-fit
-#SBATCH --nodes=1            # One node
-#SBATCH --ntasks=1           # One task (serial job)
-#SBATCH --cpus-per-task=1    # One core (FB is serial)
-#SBATCH --gres=gpu:1         # One GPU (used by Evaluator/OpenMM)
-#SBATCH --mem=10000mb        # Memory for the node
+#SBATCH --nodes=1           
+#SBATCH --ntasks=1          
+#SBATCH --cpus-per-task=1    
+#SBATCH --gres=gpu:1         
+#SBATCH --mem=10000mb       
 #SBATCH --partition=blanca-shirts
 #SBATCH --qos=blanca-shirts
 #SBATCH --account=blanca-shirts
@@ -14,9 +14,8 @@
 #SBATCH -e logs/master-%A.err
 
 
-# Execute a force field optimization job using SLRUM for job scheduling and FB for computational tasks. Manages workflow by setting up a temp directory, activating a conda environemnt, and handling data transfers. 
 ml anaconda
-conda_env="co-optimization-cuda" #"evaluator-co-test" "sep-2024-env" and evaluator-test-matt
+conda_env="co-optimization-cuda" 
 source $HOME/.bashrc
 conda activate $conda_env
 
